@@ -254,7 +254,7 @@ the `E-Mail Content` field with the message you want to send and click the
 
 # Complete the Service Task
 
-The second task of the process is a [service
+The second task of the process is the [service
 task](https://docs.camunda.io/docs/reference/bpmn-workflows/service-tasks/service-tasks)
 _Send Email_.
 
