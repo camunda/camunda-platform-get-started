@@ -1,0 +1,1 @@
+{"components":[{"id":"textfield1","key":"message_content","label":"E-Mail Content","type":"textfield","parent":"default1","path":["components",0],"description":"Please enter the content of the E-Mail message","validate":{"required":true}}],"type":"default","id":"default1","path":[]}

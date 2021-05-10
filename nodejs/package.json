@@ -1,0 +1,22 @@
+{
+  "name": "camunda-cloud-get-started",
+  "version": "1.0.0",
+  "description": "Camunda Cloud Get Started Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda-cloud/camunda-cloud-get-started.git"
+  },
+  "author": "Camunda Cloud",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/camunda-cloud/camunda-cloud-get-started/issues"
+  },
+  "homepage": "https://github.com/camunda-cloud/camunda-cloud-get-started#readme",
+  "dependencies": {
+    "zeebe-node": "^1.0.0-alpha.7"
+  }
+}
