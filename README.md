@@ -278,7 +278,7 @@ worker implementations.
 # Further References
 
 You can find more information in the [Camunda Cloud
-Documentation][Camunda Cloud Cocumentation], or join the [Camunda Cloud
+Documentation][Camunda Cloud Documentation], or join the [Camunda Cloud
 Forum](https://forum.camunda.io) and [Camunda Cloud
 Slack](https://camunda-cloud.slack.com) Community.
 
