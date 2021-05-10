@@ -9,8 +9,6 @@ During the guide you will use the Console, Modeler, Zeebe, Operate and Tasklist.
 
 * [Repository structure](#repository-structure)
 * [Setup the environment](#setup-the-environment)
-   * [Camunda Cloud](#camunda-cloud)
-   * [Local self managed setup](#local-self-managed-setup)
 * [Model the process](#model-the-process)
    * [Model the user task form](#model-the-user-task-form)
    * [Configure user task to use form](#configure-user-task-to-use-form)
@@ -28,6 +26,7 @@ During the guide you will use the Console, Modeler, Zeebe, Operate and Tasklist.
 * [Complete the User Task](#complete-the-user-task)
 * [Complete the Service Task](#complete-the-service-task)
 * [Further References](#further-references)
+* [Local Setup](#local-setup)
 
 # Repository structure
 
@@ -41,11 +40,10 @@ The repository contains the following folders:
 
 # Setup the environment
 
-To follow this guide we need a running Camunda Cloud cluster, either by using
-the Camunda Cloud SaaS offering at https://camunda.io or by creating a self
-managed local setup.
+To follow this guide we need a running Camunda Cloud cluster. For this purpose
+we use the Camunda Cloud SaaS offering at https://camunda.io.
 
-## Camunda Cloud
+In case you prefer a local setup, please have a look at the [end of the guide](#local-setup).
 
 After the sign-up and log-in at https://camunda.io, a cluster is already
 available with the latest stable version of Zeebe with the name _Test Cluster_.
@@ -62,22 +60,6 @@ To do this, enter the Clusters detail page, and switch to the _API_ tab. Create 
 new client credential and either note down the client id and client secret, or
 download the credentials file.
 
-## Local self managed setup
-
-To run the getting started guide against a locally hosted instance you have to setup the following
-components:
-
-- [Zeebe](https://docs.camunda.io/docs/product-manuals/zeebe/deployment-guide/local/install)
-- [Operate](https://docs.camunda.io/docs/product-manuals/operate/deployment/install-and-start)
-- [Tasklist](https://docs.camunda.io/docs/product-manuals/tasklist/deployment/install-and-start)
-- [Camunda Modeler]
-
-If docker is available in your system, the `docker-compose.yaml` in the root
-folder can be used to spin up a local environment.
-
-```
-docker-compose up -d
-```
 
 # Model the process
 
@@ -144,10 +126,9 @@ follow these steps:
 
 1. Press the _Deploy current diagram_ button
     ![Deploy Button](images/camunda-modeler-deploy-button.png)
-2. Configure the endpoint for the deployment. If you use the self managed local
-   deployment the default of `0.0.0.0:26500` should be fine. For Camunda Cloud
+2. Configure the endpoint for the deployment. For Camunda Cloud
    you need the cluster id from the cluster details page, and the [client
-   credentials](#camunda-cloud) you created.
+   credentials](#-cloud) you created.
     ![Deploy Camunda Cloud](images/camunda-modeler-deploy-modal.png)
 
 ## Deploy using Cloud Modeler
@@ -166,19 +147,13 @@ To the deploy the [process](process/send-email.bpmn) using `zbctl` use the
 following command.
 
 For **Camunda Cloud** we need the cluster id and the [client
-credentials](#camunda-cloud)
+credentials](#setup-the-environment)
 
 ```bash
 zbctl deploy send-email.bpmn \
   --address 365eed98-16c1-4096-bb57-eb8828ed131e.zeebe.camunda.io:443 \
   --clientId 'GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z' \
   --clientSecret '.RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ'
-```
-
-For the **local self managed** setup the secure connection has to be disabled
-
-```bash
-zbctl --insecure deploy send-email.bpmn
 ```
 
 ## Deploy using code
@@ -217,19 +192,13 @@ To start a process instance of the BPMN process id `send-email` using the zbctl
 use the following command.
 
 For **Camunda Cloud** we need the cluster id and the [client
-credentials](#camunda-cloud)
+credentials](#setup-the-environment)
 
 ```bash
 zbctl create instance send-email \
   --address 365eed98-16c1-4096-bb57-eb8828ed131e.zeebe.camunda.io:443 \
   --clientId 'GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z' \
   --clientSecret '.RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ'
-```
-
-For the **local self managed** setup the secure connection has to be disabled
-
-```bash
-zbctl --insecure create instance send-email
 ```
 
 ## Start Instance using code
@@ -247,8 +216,7 @@ _Enter Message_.
 ![Process](images/send-email.png)
 
 To complete the user task we can use Tasklist. To do this, visit the cluster's
-details page in Camunda Cloud and launch Tasklist, or for the local self managed setup go to
-http://localhost:8081.
+details page in Camunda Cloud and launch Tasklist.
 
 In Tasklist, select the _Enter Message_ task from the list of tasks.
 Then click the _claim_ button to assign the task to you to work on it. Fill out
@@ -286,6 +254,29 @@ You can find more information in the [Camunda Cloud
 Documentation][Camunda Cloud Documentation], or join the [Camunda Cloud
 Forum](https://forum.camunda.io) and [Camunda Cloud
 Slack](https://camunda-cloud.slack.com) Community.
+
+## Local Setup
+
+To run the getting started guide against a locally hosted instance you have to setup the following
+components:
+
+- [Zeebe](https://docs.camunda.io/docs/product-manuals/zeebe/deployment-guide/local/install)
+- [Operate](https://docs.camunda.io/docs/product-manuals/operate/deployment/install-and-start)
+- [Tasklist](https://docs.camunda.io/docs/product-manuals/tasklist/deployment/install-and-start)
+- [Camunda Modeler]
+
+If docker is available in your system, the `docker-compose.yaml` in the root
+folder can be used to spin up a local environment.
+
+```
+docker-compose up -d
+```
+
+After this Zeebe is available under `localhost:26500`, please disable security
+inside the client when connecting to it.
+
+Operate will be available under http://localhost:8080 and Tasklist will be
+available under http://localhost:8081.
 
 [Camunda Modeler]: https://camunda.com/download/modeler/
 [Cloud Modeler]: https://docs.camunda.io/docs/product-manuals/modeler/cloud-modeler/launch-cloud-modeler
