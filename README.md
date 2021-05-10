@@ -119,7 +119,7 @@ Configuration_ field under the _Forms_ tab of the modeler.
 
 The last step is to define the job type of the service task. The job type is
 needed for a job worker to subscribe to the jobs of the task and
-complete them. The [Camunda Cloud Documentation][Camunda Cloud Cocumentation] contains more information about
+complete them. The [Camunda Cloud Documentation][Camunda Cloud Documentation] contains more information about
 [job
 workers](https://docs.camunda.io/docs/product-manuals/concepts/job-workers).
 
