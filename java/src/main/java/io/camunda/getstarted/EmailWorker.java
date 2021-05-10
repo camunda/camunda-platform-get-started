@@ -10,12 +10,7 @@ public class EmailWorker {
   private static final Logger LOG = LogManager.getLogger(EmailWorker.class);
 
   public static void main(String[] args) {
-    try (ZeebeClient client =
-        ZeebeClient.newCloudClientBuilder()
-            .withClusterId("365eed98-16c1-4096-bb57-eb8828ed131e")
-            .withClientId("GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z")
-            .withClientSecret(".RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ")
-            .build()) {
+    try (ZeebeClient client = ZeebeClientFactory.getZeebeClient()) {
       client.newWorker().jobType("email").handler((jobClient, job) -> {
         final String message_content = (String) job.getVariablesAsMap().get("message_content");
 

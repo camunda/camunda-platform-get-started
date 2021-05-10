@@ -50,6 +50,8 @@ managed local setup.
 After the sign-up and log-in at https://camunda.io, a cluster is already
 available with the latest stable version of Zeebe with the name _Test Cluster_.
 
+![Cloud Cluster](images/cloud-cluster.png)
+
 If there is no cluster available [create a new
 one](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/create-cluster)
 with the latest stable version of Zeebe.
@@ -79,9 +81,12 @@ docker-compose up -d
 
 # Model the process
 
-In this example, we want to model a simple process to send an email message. The
-process will consist of two tasks: a user task to allow a human to enter the
-message content, and a service task to automatically send the email message.
+In this example, we want to model a simple process to send an email message.
+Camunda Cloud allows you us the
+[BPMN](https://docs.camunda.io/docs/reference/bpmn-workflows/bpmn-primer)
+standard to model your business processes.  The process will consist of two
+tasks: a user task to allow a human to enter the message content, and a service
+task to automatically send the email message.
 
 ![Process](images/send-email.png)
 
@@ -145,7 +150,7 @@ follow these steps:
    credentials](#camunda-cloud) you created.
     ![Deploy Camunda Cloud](images/camunda-modeler-deploy-modal.png)
 
-## Deploy using Camunda Cloud
+## Deploy using Cloud Modeler
 
 To deploy the [process](process/send-email.bpmn) using the Cloud Modeler
 follow these steps:
@@ -195,7 +200,7 @@ To start an instance of the process with the Camunda Modeler: after the process 
 
 ![Start Instance Button](images/camunda-modeler-start-instance-button.png)
 
-## Start Instance using Camunda Cloud
+## Start Instance using Cloud Modeler
 
 To start an instance of the process using the Cloud Modeler follow these steps:
 

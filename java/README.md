@@ -65,10 +65,8 @@ final ProcessInstanceEvent event = client.newCreateInstanceCommand()
           .send()
           .join();
 
-LOG.info(
-		"Started instance for processDefinitionKey='{}', bpmnProcessId='{}', version='{}' with processInstanceKey='{}'",
-		event.getProcessDefinitionKey(), event.getBpmnProcessId(), event.getVersion(),
-		event.getProcessInstanceKey());
+LOG.info("Started instance for processDefinitionKey='{}', bpmnProcessId='{}', version='{}' with processInstanceKey='{}'",
+	event.getProcessDefinitionKey(), event.getBpmnProcessId(), event.getVersion(), event.getProcessInstanceKey());
 ```
 
 For the complete code see the
@@ -76,7 +74,7 @@ For the complete code see the
 run it using the following command.
 
 ```bash
-./mvnw exec:java
+mvn exec:java
 ```
 
 # Job Worker
@@ -90,12 +88,12 @@ the `newWorker` method can be used.
 
 ```java
 client.newWorker().jobType("email").handler((jobClient, job) -> {
-		final String message_content = (String) job.getVariablesAsMap().get("message_content");
+	final String message_content = (String) job.getVariablesAsMap().get("message_content");
 
-		LOG.info("Sending email with message content: {}", message_content);
+	LOG.info("Sending email with message content: {}", message_content);
 
-		jobClient.newCompleteCommand(job.getKey()).send().join();
-		}).open();
+	jobClient.newCompleteCommand(job.getKey()).send().join();
+}).open();
 
 ```
 
@@ -104,7 +102,7 @@ For the complete code see the
 run it using the following command.
 
 ```bash
-./mvnw exec:java -P worker
+mvn exec:java -P worker
 ```
 
 To make an job available, a user task has to be completed, follow the

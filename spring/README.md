@@ -103,7 +103,7 @@ For the complete code see the
 run it using the following command.
 
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 # Job Worker
@@ -131,7 +131,7 @@ For the complete code see the
 run it using the following command.
 
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 To make an job available, a user task has to be completed, follow the
