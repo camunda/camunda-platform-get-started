@@ -1,8 +1,8 @@
 package io.camunda.getstarted;
 
-import io.camunda.spring.client.EnableZeebeClient;
-import io.camunda.spring.client.ZeebeClientLifecycle;
-import io.camunda.spring.client.annotation.ZeebeDeployment;
+import io.camunda.zeebe.spring.client.EnableZeebeClient;
+import io.camunda.zeebe.spring.client.ZeebeClientLifecycle;
+import io.camunda.zeebe.spring.client.annotation.ZeebeDeployment;
 import io.camunda.zeebe.client.api.response.ProcessInstanceEvent;
 import java.util.Map;
 import org.slf4j.Logger;

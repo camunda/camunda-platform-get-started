@@ -1,7 +1,7 @@
 package io.camunda.getstarted;
 
-import io.camunda.spring.client.EnableZeebeClient;
-import io.camunda.spring.client.annotation.ZeebeWorker;
+import io.camunda.zeebe.spring.client.EnableZeebeClient;
+import io.camunda.zeebe.spring.client.annotation.ZeebeWorker;
 import io.camunda.zeebe.client.api.response.ActivatedJob;
 import io.camunda.zeebe.client.api.worker.JobClient;
 import org.slf4j.Logger;
