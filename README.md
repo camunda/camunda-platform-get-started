@@ -93,11 +93,9 @@ provider.
 To create the process we can use the desktop [Camunda Modeler] or the [Cloud
 Modeler].
 
-
 ![Model Process](images/model-process.gif)
 
 The finished process can be found at [process/send-email.bpmn](process/send-email.bpmn).
-
 
 ## Model the user task form
 
@@ -129,7 +127,6 @@ workers](https://docs.camunda.io/docs/product-manuals/concepts/job-workers).
 
 # Deploy Process
 
-
 The process can be deployed using the [Camunda
 Modeler](#deploy-using-camunda-modeler), [Cloud
 Modeler](#deploy-using-camunda-cloud), [zbctl](#deploy-using-zbctl) or your [own
@@ -157,7 +154,6 @@ follow these steps:
     ![Deploy Button](images/cloud-modeler-deploy-button.png)
 2. Select the cluster to deploy the diagram on
     ![Deploy Camunda Cloud](images/cloud-modeler-deploy-modal.png)
-
 
 ## Deploy using zbctl
 
@@ -209,7 +205,6 @@ To start an instance of the process using the Cloud Modeler follow these steps:
    variables](https://docs.camunda.io/docs/product-manuals/concepts/variables)
    before starting the instance ![Start Instance Camunda
    Cloud](images/cloud-modeler-start-instance-modal.png)
-
 
 ## Start Instance using zbctl
 
