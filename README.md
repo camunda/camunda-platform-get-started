@@ -79,10 +79,9 @@ docker-compose up -d
 
 # Model the process
 
-In this example, we want to model a simple process to send a email message.  The
+In this example, we want to model a simple process to send an email message. The
 process will consist of two tasks: a user task to allow a human to enter the
 message content, and a service task to automatically send the email message.
-
 
 ![Process](images/send-email.png)
 
@@ -138,7 +137,7 @@ code](#deploy-using-code).
 
 ## Deploy using Camunda Modeler
 
-To the deploy the [process](process/send-email.bpmn) using the Camunda Modeler
+To deploy the [process](process/send-email.bpmn) using the Camunda Modeler
 follow these steps:
 
 1. Press the _Deploy current diagram_ button
@@ -151,7 +150,7 @@ follow these steps:
 
 ## Deploy using Camunda Cloud
 
-To the deploy the [process](process/send-email.bpmn) using the Cloud Modeler
+To deploy the [process](process/send-email.bpmn) using the Cloud Modeler
 follow these steps:
 
 1. Press the _Deployment_ button and select _Save and Deploy_
