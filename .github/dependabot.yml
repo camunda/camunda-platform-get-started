@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "maven" 
+    directory: "/java"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "maven" 
+    directory: "/spring"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm" 
+    directory: "/nodejs"
+    schedule:
+      interval: "daily"
