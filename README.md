@@ -1,7 +1,7 @@
 # Camunda Cloud - Get Started
 
 This repository contains a short guide to get started with [Camunda
-Cloud](https://camunda.com/products/cloud/). It contains explanations, how to
+Cloud](https://camunda.com/products/cloud/). It contains instructions on how to
 model your first process, create a user task form, and automate a service task.
 During the guide you will use the Console, Modeler, Zeebe, Operate and Tasklist.
 
@@ -55,14 +55,14 @@ one](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/
 with the latest stable version of Zeebe.
 
 After the cluster is available, we need to create a pair of [_Client
-Credientals_](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/manage-api-clients).
-Therefore enter the Clusters detail page, and switch to the _API_ tab. Create a
+Credentials_](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/manage-api-clients).
+To do this, enter the Clusters detail page, and switch to the _API_ tab. Create a
 new client credential and either note down the client id and client secret, or
 download the credentials file.
 
 ## Local self managed setup
 
-To run the getting started guide locally you have to setup the following
+To run the getting started guide against a locally hosted instance you have to setup the following
 components:
 
 - [Zeebe](https://docs.camunda.io/docs/product-manuals/zeebe/deployment-guide/local/install)
@@ -79,9 +79,9 @@ docker-compose up -d
 
 # Model the process
 
-In this example we want to model a simple process to send a email message.  The
-process will consist out of two tasks, a user task to allow a human to enter the
-message content, and a service tasks to automatically send the email message.
+In this example, we want to model a simple process to send a email message.  The
+process will consist of two tasks: a user task to allow a human to enter the
+message content, and a service task to automatically send the email message.
 
 
 ![Process](images/send-email.png)
@@ -91,13 +91,13 @@ scaffolding for this process automation example, but we will not actually send
 an email. This can be a task for you to extend the example and connect to a mail
 provider.
 
-The create the process we can use the desktop [Camunda Modeler] or the [Cloud
+To create the process we can use the desktop [Camunda Modeler] or the [Cloud
 Modeler].
 
 
 ![Model Process](images/model-process.gif)
 
-The finished process can be found under [process/send-email.bpmn](process/send-email.bpmn).
+The finished process can be found at [process/send-email.bpmn](process/send-email.bpmn).
 
 
 ## Model the user task form
@@ -108,21 +108,21 @@ can be used to create the form.
 
 ![Model Form](images/model-form.gif)
 
-The finished form can be found under [process/enter-email-message.form](process/enter-email-message.form).
+The finished form can be found at [process/enter-email-message.form](process/enter-email-message.form).
 
 ## Configure user task to use form
 
-After the form was create we have to configure the user task to use the form.
-Therefore we have to copy the JSON content of the form into the _Form Json
+Now that we have created a form, we have to configure the user task to use the form.
+To do this, we have to copy the JSON content of the form into the _Form Json
 Configuration_ field under the _Forms_ tab of the modeler.
 
 ![Configure user task form](images/user-task-form.png)
 
 ## Configure service task
 
-As last step we have to define the job type of the service task. The job type is
-need so that later a job worker can subscribe to the job of the task and
-complete it. The Camunda Cloud documentation contains more information about
+The last step is to define the job type of the service task. The job type is
+needed for a job worker to subscribe to the jobs of the task and
+complete them. The Camunda Cloud documentation contains more information about
 [job
 workers](https://docs.camunda.io/docs/product-manuals/concepts/job-workers).
 
@@ -133,7 +133,7 @@ workers](https://docs.camunda.io/docs/product-manuals/concepts/job-workers).
 
 The process can be deployed using the [Camunda
 Modeler](#deploy-using-camunda-modeler), [Cloud
-Modeler](#deploy-using-camunda-cloud), [zbctl](#deploy-using-zbctl) or [own
+Modeler](#deploy-using-camunda-cloud), [zbctl](#deploy-using-zbctl) or your [own
 code](#deploy-using-code).
 
 ## Deploy using Camunda Modeler
@@ -156,13 +156,13 @@ follow these steps:
 
 1. Press the _Deployment_ button and select _Save and Deploy_
     ![Deploy Button](images/cloud-modeler-deploy-button.png)
-2. Select the cluster the diagram should be deployed on
+2. Select the cluster to deploy the diagram on
     ![Deploy Camunda Cloud](images/cloud-modeler-deploy-modal.png)
 
 
 ## Deploy using zbctl
 
-To the deploy the [process](process/send-email.bpmn) using the zbctl use the
+To the deploy the [process](process/send-email.bpmn) using `zbctl` use the
 following command.
 
 For **Camunda Cloud** we need the cluster id and the [client
@@ -183,8 +183,8 @@ zbctl --insecure deploy send-email.bpmn
 
 ## Deploy using code
 
-Writing your own code allows you to deploy the process, i.e. on application
-startup to ensure that always the latest version is deployed. To see examples of
+Writing your own code allows you to deploy the process, for example, on application
+startup, to ensure that the latest version is deployed. To see examples of
 this check out the programming language [specific folders](#repository-structure).
 
 # Start Process Instance
@@ -196,7 +196,7 @@ code](#start-instance-using-code).
 
 ## Start Instance using Camunda Modeler
 
-To start an instance of the process with the Camunda Modeler after the process was deployed the user has to click the _Start Current Diagram_ button .
+To start an instance of the process with the Camunda Modeler: after the process is deployed, click the _Start Current Diagram_ button.
 
 ![Start Instance Button](images/camunda-modeler-start-instance-button.png)
 
@@ -235,8 +235,8 @@ zbctl --insecure create instance send-email
 
 ## Start Instance using code
 
-Writing your own code allows you to start an instance of the process, i.e. on an
-external trigger, like a message or a user request. To see examples of this
+Writing your own code allows you to start an instance of the process on an
+external trigger, like an incoming message or a user request. To see examples of this
 check out the programming language [specific folders](#repository-structure).
 
 # Complete the User Task
@@ -247,11 +247,11 @@ _Enter Message_.
 
 ![Process](images/send-email.png)
 
-To complete the user task we can use Tasklist, therefore visit the clusters
-details page and launch Tasklist, or for the local self managed setup go to
+To complete the user task we can use Tasklist. To do this, visit the cluster's
+details page in Camunda Cloud and launch Tasklist, or for the local self managed setup go to
 http://localhost:8081.
 
-In Tasklist you have to select the _Enter Message_ task form the list of tasks.
+In Tasklist, select the _Enter Message_ task from the list of tasks.
 Then click the _claim_ button to assign the task to you to work on it. Fill out
 the `E-Mail Content` field with the message you want to send and click the
 `Complete Task` button
@@ -269,7 +269,7 @@ _Send Email_.
 To complete the service task we need to implement the business logic, therefore
 we have to create a [job
 worker](https://docs.camunda.io/docs/product-manuals/concepts/job-workers) for
-the task type we define in the diagram. The job worker can then subscribe to all
+the task type we defined in the diagram. The job worker will subscribe to all
 jobs with the same task type.
 
 To define the task type we can select the service task in the diagram and use
@@ -277,7 +277,7 @@ the properties panel to set the task type to `email`.
 
 ![Task Type](images/camunda-modeler-task-type.png)
 
-To implement the logic we have to implement a job worker, check out the
+To implement the logic we have to implement a job worker. Check out the
 programming language [specific folders](#repository-structure) to find the job
 worker implementations.
 
