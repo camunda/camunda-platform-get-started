@@ -79,10 +79,9 @@ docker-compose up -d
 
 # Model the process
 
-In this example, we want to model a simple process to send a email message.  The
+In this example, we want to model a simple process to send an email message. The
 process will consist of two tasks: a user task to allow a human to enter the
 message content, and a service task to automatically send the email message.
-
 
 ![Process](images/send-email.png)
 
@@ -94,11 +93,9 @@ provider.
 To create the process we can use the desktop [Camunda Modeler] or the [Cloud
 Modeler].
 
-
 ![Model Process](images/model-process.gif)
 
 The finished process can be found at [process/send-email.bpmn](process/send-email.bpmn).
-
 
 ## Model the user task form
 
@@ -122,14 +119,13 @@ Configuration_ field under the _Forms_ tab of the modeler.
 
 The last step is to define the job type of the service task. The job type is
 needed for a job worker to subscribe to the jobs of the task and
-complete them. The Camunda Cloud documentation contains more information about
+complete them. The [Camunda Cloud Documentation][Camunda Cloud Documentation] contains more information about
 [job
 workers](https://docs.camunda.io/docs/product-manuals/concepts/job-workers).
 
 ![Configure service task](images/configure-service-task.png)
 
 # Deploy Process
-
 
 The process can be deployed using the [Camunda
 Modeler](#deploy-using-camunda-modeler), [Cloud
@@ -138,7 +134,7 @@ code](#deploy-using-code).
 
 ## Deploy using Camunda Modeler
 
-To the deploy the [process](process/send-email.bpmn) using the Camunda Modeler
+To deploy the [process](process/send-email.bpmn) using the Camunda Modeler
 follow these steps:
 
 1. Press the _Deploy current diagram_ button
@@ -151,14 +147,13 @@ follow these steps:
 
 ## Deploy using Camunda Cloud
 
-To the deploy the [process](process/send-email.bpmn) using the Cloud Modeler
+To deploy the [process](process/send-email.bpmn) using the Cloud Modeler
 follow these steps:
 
 1. Press the _Deployment_ button and select _Save and Deploy_
     ![Deploy Button](images/cloud-modeler-deploy-button.png)
 2. Select the cluster to deploy the diagram on
     ![Deploy Camunda Cloud](images/cloud-modeler-deploy-modal.png)
-
 
 ## Deploy using zbctl
 
@@ -211,7 +206,6 @@ To start an instance of the process using the Cloud Modeler follow these steps:
    before starting the instance ![Start Instance Camunda
    Cloud](images/cloud-modeler-start-instance-modal.png)
 
-
 ## Start Instance using zbctl
 
 To start a process instance of the BPMN process id `send-email` using the zbctl
@@ -260,7 +254,7 @@ the `E-Mail Content` field with the message you want to send and click the
 
 # Complete the Service Task
 
-The second task of the process is a [service
+The second task of the process is the [service
 task](https://docs.camunda.io/docs/reference/bpmn-workflows/service-tasks/service-tasks)
 _Send Email_.
 
@@ -281,13 +275,13 @@ To implement the logic we have to implement a job worker. Check out the
 programming language [specific folders](#repository-structure) to find the job
 worker implementations.
 
-
 # Further References
 
 You can find more information in the [Camunda Cloud
-Documentation](https://docs.camunda.io), or join the [Camunda Cloud
+Documentation][Camunda Cloud Documentation], or join the [Camunda Cloud
 Forum](https://forum.camunda.io) and [Camunda Cloud
 Slack](https://camunda-cloud.slack.com) Community.
 
 [Camunda Modeler]: https://camunda.com/download/modeler/
 [Cloud Modeler]: https://docs.camunda.io/docs/product-manuals/modeler/cloud-modeler/launch-cloud-modeler
+[Camunda Cloud Documentation]: https://docs.camunda.io
