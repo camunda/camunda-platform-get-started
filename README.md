@@ -284,4 +284,4 @@ Slack](https://camunda-cloud.slack.com) Community.
 
 [Camunda Modeler]: https://camunda.com/download/modeler/
 [Cloud Modeler]: https://docs.camunda.io/docs/product-manuals/modeler/cloud-modeler/launch-cloud-modeler
-[Camunda Cloud Cocumentation]: https://docs.camunda.io
+[Camunda Cloud Documentation]: https://docs.camunda.io
