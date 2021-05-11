@@ -9,7 +9,7 @@ The open source library [zeebe-node](https://www.npmjs.com/package/zeebe-node)
 provides a Zeebe client.
 
 ```
-npm install --save zeebe-node@1.0.0-alpha.7
+npm install --save zeebe-node
 ```
 
 # Create Client
