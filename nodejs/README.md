@@ -71,7 +71,7 @@ node deploy-and-start-instance.js
 # Job Worker
 
 To complete a [service
-task](https://docs.camunda.io/docs/reference/bpmn-workflows/service-tasks/service-tasks/),
+task](https://docs.camunda.io/docs/reference/bpmn-processes/service-tasks/service-tasks/),
 a [job
 worker](https://docs.camunda.io/docs/product-manuals/concepts/job-workers) has
 to be subscribed the to task type defined in the process, i.e. `email`.
