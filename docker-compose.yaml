@@ -2,47 +2,47 @@ version: "3"
 
 services:
     zeebe:
-        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.0.0-rc3}
+        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.0.1}
         container_name: zeebe
         environment:
-            - zeebe.broker.exporters.elasticsearch.className=io.camunda.zeebe.exporter.ElasticsearchExporter
-            - zeebe.broker.exporters.elasticsearch.args.url=http://elasticsearch:9200
-            - zeebe.broker.exporters.elasticsearch.args.bulk.size=1
+            - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.camunda.zeebe.exporter.ElasticsearchExporter
+            - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_URL=http://elasticsearch:9200
+            - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_BULK_SIZE=1
         ports:
             - 26500:26500
-        volumes: 
+        volumes:
             - zeebe:/usr/local/zeebe/data
-        networks: 
+        networks:
             - camunda-cloud
-        depends_on: 
+        depends_on:
             - elasticsearch
 
     operate:
-        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.0.0-rc3}
+        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.0.1}
         container_name: operate
-        environment: 
-            - camunda.operate.zeebe.gatewayAddress=zeebe:26500
-            - camunda.operate.elasticsearch.url=http://elasticsearch:9200
-            - camunda.operate.zeebeElasticsearch.url=http://elasticsearch:9200
+        environment:
+            - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
+            - CAMUNDA_OPERATE_ELASTICSEARCH_URL=http://elasticsearch:9200
+            - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_URL=http://elasticsearch:9200
         ports:
             - 8080:8080
-        networks: 
+        networks:
             - camunda-cloud
-        depends_on: 
+        depends_on:
             - elasticsearch
 
     tasklist:
-        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.0.0-rc3}
+        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.0.1}
         container_name: tasklist
-        environment: 
-            - camunda.tasklist.zeebe.gatewayAddress=zeebe:26500
-            - camunda.tasklist.elasticsearch.url=http://elasticsearch:9200
-            - camunda.tasklist.zeebeElasticsearch.url=http://elasticsearch:9200
+        environment:
+            - CAMUNDA_TASKLIST_ZEEBE_GATEWAYADDRESS=zeebe:26500
+            - CAMUNDA_TASKLIST_ELASTICSEARCH_URL=http://elasticsearch:9200
+            - CAMUNDA_TASKLIST_ZEEBEELASTICSEARCH_URL=http://elasticsearch:9200
         ports:
             - 8081:8080
-        networks: 
+        networks:
             - camunda-cloud
-        depends_on: 
+        depends_on:
             - elasticsearch
 
     elasticsearch:
@@ -57,9 +57,9 @@ services:
             memlock:
                 soft: -1
                 hard: -1
-        volumes: 
+        volumes:
             - elastic:/usr/share/elasticsearch/data
-        networks: 
+        networks:
             - camunda-cloud
 
 
@@ -68,7 +68,7 @@ volumes:
         driver: local
     elastic:
         driver: local
-    
+
 networks:
     camunda-cloud:
         driver: bridge
