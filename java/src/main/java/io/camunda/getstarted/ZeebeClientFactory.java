@@ -9,6 +9,7 @@ public class ZeebeClientFactory {
         .withClusterId("365eed98-16c1-4096-bb57-eb8828ed131e")
         .withClientId("GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z")
         .withClientSecret(".RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ")
+        .withRegion("bru-2")
         .build();
   }
 
