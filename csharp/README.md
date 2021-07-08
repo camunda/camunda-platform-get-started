@@ -1,4 +1,4 @@
-# Camunda Cloud - Get Started - Spring Boot
+# Camunda Cloud - Get Started - C# Client
 
 This guide explains how to setup a csharp project to automate a process using
 [Camunda Cloud](https://camunda.com/products/cloud/).
