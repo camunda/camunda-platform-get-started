@@ -13,7 +13,7 @@ provides a Zeebe client.
 <dependency>
 	<groupId>io.camunda</groupId>
 	<artifactId>zeebe-client-java</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 </dependency>
 ```
 
@@ -32,6 +32,7 @@ ZeebeClient client = ZeebeClient.newCloudClientBuilder()
         .withClusterId("365eed98-16c1-4096-bb57-eb8828ed131e")
         .withClientId("GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z")
         .withClientSecret(".RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ")
+        .withRegion("bru-2")
         .build()
 ```
 
