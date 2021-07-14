@@ -46,7 +46,7 @@ ZeebeClient client = ZeebeClient.newClientBuilder().usePlaintext().build();
 # Deploy Process and Start Instance
 
 To deploy a process you can use the `newDeployCommand` method, which allows
-to specify a list of classpath resources `classPathResources` to be deployed.
+to specify a list of classpath resources to be deployed.
 
 ```java
 client.newDeployCommand()
@@ -93,7 +93,7 @@ client.newWorker().jobType("email").handler((jobClient, job) -> {
 
 	LOG.info("Sending email with message content: {}", message_content);
 
-	jobClient.newCompleteCommand(job.getKey()).send().join();
+	jobClient.newCompleteCommand(job.getKey()).send();
 }).open();
 
 ```

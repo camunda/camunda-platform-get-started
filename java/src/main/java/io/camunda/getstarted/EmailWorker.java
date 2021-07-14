@@ -16,7 +16,7 @@ public class EmailWorker {
 
         LOG.info("Sending email with message content: {}", message_content);
 
-        jobClient.newCompleteCommand(job.getKey()).send().join();
+        jobClient.newCompleteCommand(job.getKey()).send();
       }).open();
 
       // run until System.in receives exit command
