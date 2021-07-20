@@ -157,6 +157,6 @@ That's why the worker showed a different pattern:
 ```
 send().whenComplete((result, exception) -> {})
 ```
-This registers a callback to be executed if the command on the workflow engines was executed or resulted in an exception. This allows for parallelism, which is especially interesting in workers. 
+This registers a callback to be executed if the command on the workflow engine was executed or resulted in an exception. This allows for parallelism, which is especially interesting in workers. 
 
-This is discussed in more detial [this blog post about writing good workers for Camunda Cloud](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).
+This is discussed in more detail in [this blog post about writing good workers for Camunda Cloud](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).
