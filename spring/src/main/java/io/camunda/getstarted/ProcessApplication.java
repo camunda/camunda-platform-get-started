@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableZeebeClient
-@ZeebeDeployment(classPathResources = "send-email.bpmn")
+@ZeebeDeployment(resources = "classpath:send-email.bpmn")
 public class ProcessApplication implements CommandLineRunner {
 
   private final static Logger LOG = LoggerFactory.getLogger(ProcessApplication.class);
