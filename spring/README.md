@@ -122,7 +122,14 @@ public void sendEmail(final JobClient client, final ActivatedJob job) {
 
 	LOG.info("Sending email with message content: {}", message_content);
 
-	client.newCompleteCommand(job.getKey()).send().join();
+	client.newCompleteCommand(job.getKey()).send()
+    .whenComplete((result, exception) -> {
+      if (exception == null) {
+        LOG.info("Completed job successful with result:" + result);
+      } else {
+        LOG.error("Failed to complete job", exception);
+      }
+    });
 }
 ```
 
@@ -136,3 +143,20 @@ mvn spring-boot:run
 
 To make an job available, a user task has to be completed, follow the
 instructions in [the guide](../README.md#complete-the-user-task).
+
+
+# Blocking vs. Non-Blocking Code
+
+Some of the code examples above (deploy, start process instance) used
+```
+send().join()
+```
+which is a blocking call to wait for the issues command to be executed on the workflow engine. While this is very straightforward to use and produces easy-to-read code, blocking code is limited in terms of scalability. 
+
+That's why the worker showed a different pattern:
+```
+send().whenComplete((result, exception) -> {})
+```
+This registers a callback to be executed if the command on the workflow engine was executed or resulted in an exception. This allows for parallelism, which is especially interesting in workers. 
+
+This is discussed in more detail in [this blog post about writing good workers for Camunda Cloud](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).
