@@ -1,4 +1,4 @@
-# Camunda Cloud - Get Started - Spring Boot
+# Camunda Cloud - Get Started - Java
 
 This guide explains how to setup a Java project to automate a process using
 [Camunda Cloud](https://camunda.com/products/cloud/).
