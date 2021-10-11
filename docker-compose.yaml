@@ -2,7 +2,7 @@ version: "3"
 
 services:
     zeebe:
-        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.1.3}
+        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.2.1}
         container_name: zeebe
         environment:
             - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.camunda.zeebe.exporter.ElasticsearchExporter
