@@ -110,7 +110,7 @@ Configuration** field under the **Forms** tab of the modeler.
 
 The last step is defining the job type of the service task. The job type is
 needed for a job worker to subscribe to the jobs of the task and
-complete them. The [Camunda Cloud Documentation][Camunda Cloud Documentation] contains more information about
+complete them. The [Camunda Cloud Documentation] contains more information about
 [job workers](https://docs.camunda.io/docs/product-manuals/concepts/job-workers).
 
 ![Configure service task](images/configure-service-task.png)
@@ -254,8 +254,7 @@ worker implementations.
 
 # Further references
 
-Find more information in the [Camunda Cloud
-Documentation][Camunda Cloud Documentation], or join the [Camunda Cloud
+Find more information in the [Camunda Cloud Documentation], or join the [Camunda Cloud
 Forum](https://forum.camunda.io) and [Camunda Cloud
 Slack](https://camunda-cloud.slack.com) community.
 
@@ -284,6 +283,10 @@ available under http://localhost:8081.
 
 See the following additional resources:
 
-- [Camunda Modeler](https://camunda.com/download/modeler/)
-- [Cloud Modeler](9https://docs.camunda.io/docs/product-manuals/modeler/cloud-modeler/launch-cloud-modeler)
-- [Camunda Cloud Documentation](https://docs.camunda.io)
+- [Camunda Modeler]
+- [Cloud Modeler]
+- [Camunda Cloud Documentation]
+
+[Camunda Modeler]: https://camunda.com/download/modeler/
+[Cloud Modeler]: https://docs.camunda.io/docs/product-manuals/modeler/cloud-modeler/launch-cloud-modeler
+[Camunda Cloud Documentation]: https://docs.camunda.io
