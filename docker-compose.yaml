@@ -18,7 +18,7 @@ services:
             - elasticsearch
 
     operate:
-        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.1.0}
+        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.2.1}
         container_name: operate
         environment:
             - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
@@ -32,7 +32,7 @@ services:
             - elasticsearch
 
     tasklist:
-        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.1.0}
+        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.2.1}
         container_name: tasklist
         environment:
             - CAMUNDA_TASKLIST_ZEEBE_GATEWAYADDRESS=zeebe:26500
