@@ -37,7 +37,7 @@ using the following application config, see
 [application.localhost.yaml](src/main/resources/application.localhost.properties).
 
 ```properties
-zeebe.client.gateway.address=127.0.0.1:26500
+zeebe.client.broker.gatewayAddress=127.0.0.1:26500
 zeebe.client.security.plaintext=true
 ```
 
