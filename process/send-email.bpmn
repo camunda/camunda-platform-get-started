@@ -4,7 +4,7 @@
     <bpmn:extensionElements>
       <zeebe:userTaskForm id="userTaskForm_15j79nd">{"components":[{"id":"textfield1","key":"message_content","label":"E-Mail Content","type":"textfield","parent":"default1","path":["components",0],"description":"Please enter the content of the E-Mail message","validate":{"required":true}}],"type":"default","id":"default1","path":[]}</zeebe:userTaskForm>
     </bpmn:extensionElements>
-    <bpmn:startEvent id="StartEvent" name="Start">
+    <bpmn:startEvent id="StartEvent" name="Email requested">
       <bpmn:outgoing>Flow_19f2xg6</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_19f2xg6" sourceRef="StartEvent" targetRef="enterMessageTask" />
@@ -16,7 +16,7 @@
       <bpmn:incoming>Flow_0xoo3ml</bpmn:incoming>
       <bpmn:outgoing>Flow_156f3q7</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="EndEvent" name="End">
+    <bpmn:endEvent id="EndEvent" name="Email sent">
       <bpmn:incoming>Flow_156f3q7</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:userTask id="enterMessageTask" name="Enter Message">
