@@ -18,7 +18,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<zeebe.version>1.1.0</zeebe.version>
+		<zeebe.version>1.2.6</zeebe.version>
 	</properties>
 
 	<dependencies>
