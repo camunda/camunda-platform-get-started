@@ -2,7 +2,7 @@ version: "3"
 
 services:
     zeebe:
-        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.2.4}
+        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.2.6}
         container_name: zeebe
         environment:
             - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.camunda.zeebe.exporter.ElasticsearchExporter
@@ -18,7 +18,7 @@ services:
             - elasticsearch
 
     operate:
-        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.2.4}
+        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.2.6}
         container_name: operate
         environment:
             - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
@@ -32,7 +32,7 @@ services:
             - elasticsearch
 
     tasklist:
-        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.2.4}
+        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.2.6}
         container_name: tasklist
         environment:
             - CAMUNDA_TASKLIST_ZEEBE_GATEWAYADDRESS=zeebe:26500
@@ -46,7 +46,7 @@ services:
             - elasticsearch
 
     elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION:-7.14.1}
+        image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION:-7.16.1}
         container_name: elasticsearch
         environment:
             - cluster.name=camunda-cloud
