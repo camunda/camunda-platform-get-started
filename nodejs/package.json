@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/camunda-cloud/camunda-cloud-get-started#readme",
   "dependencies": {
-    "zeebe-node": "^1.3.5"
+    "zeebe-node": "^2.4.0"
   }
 }
