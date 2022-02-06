@@ -19,6 +19,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<zeebe.version>1.3.2</zeebe.version>
+		<spring-zeebe.version>1.3.0</spring-zeebe.version>
 	</properties>
 
 	<dependencies>
@@ -29,8 +30,14 @@
 
 		<dependency>
 			<groupId>io.camunda</groupId>
-			<artifactId>spring-zeebe-starter</artifactId>
+			<artifactId>zeebe-client-java</artifactId>
 			<version>${zeebe.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.camunda</groupId>
+			<artifactId>spring-zeebe-starter</artifactId>
+			<version>${spring-zeebe.version}</version>
 		</dependency>
 
 	</dependencies>
