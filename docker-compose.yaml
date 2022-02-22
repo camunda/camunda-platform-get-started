@@ -68,11 +68,30 @@ services:
         networks:
             - camunda-cloud
 
+    kibana:
+        image: docker.elastic.co/kibana/kibana:${ELASTIC_VERSION:-7.16.1}
+        container_name: kibana
+        environment:
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ports:
+            - 5601:5601
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        volumes:
+            - kibana:/usr/share/kibana/data
+        networks:
+            - camunda-cloud
+        profiles:
+            - dev
 
 volumes:
     zeebe:
         driver: local
     elastic:
+        driver: local
+    kibana:
         driver: local
 
 networks:
