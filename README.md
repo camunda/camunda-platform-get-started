@@ -272,7 +272,7 @@ If docker is available in your system, the `docker-compose.yaml` in the root
 folder can be used to spin up a local environment.
 
 ```
-docker-compose up -d
+docker-compose --profile full up -d
 ```
 
 After this, Zeebe is available under `localhost:26500`. Disable security
@@ -290,3 +290,22 @@ See the following additional resources:
 [Camunda Modeler]: https://camunda.com/download/modeler/
 [Cloud Modeler]: https://docs.camunda.io/docs/product-manuals/modeler/cloud-modeler/launch-cloud-modeler
 [Camunda Cloud Documentation]: https://docs.camunda.io
+
+## Dev setup
+
+The `docker-compose.yaml` uses profiles to configure the environment to your needs.  
+
+Use the default profile to run only Zeebe and Elasticsearch but no web-apps.
+
+```
+docker-compose up -d
+```
+
+Use the `dev` profile to run Zeebe, Elasticsearch and Kibana. Kibana can be used to inspect the data
+that is stored in Elasticsearch.
+
+```
+docker-compose --profile dev up -d
+```
+
+After the services are started, Kibana is available under http://localhost:5601.
