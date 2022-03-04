@@ -268,7 +268,7 @@ components:
 - [Tasklist](https://docs.camunda.io/docs/product-manuals/tasklist/deployment/install-and-start)
 - [Camunda Modeler](https://docs.camunda.io/docs/product-manuals/modeler/camunda-modeler/install-the-modeler)
 
-If docker is available in your system, the `docker-compose.yaml` in the root
+If docker is available in your system, the [docker-compose.yaml](docker-compose.yaml) in the root
 folder can be used to spin up a local environment.
 
 ```
