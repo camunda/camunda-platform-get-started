@@ -1,74 +1,74 @@
 version: "3"
 
 services:
-    zeebe:
-        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.3.5}
-        container_name: zeebe
-        environment:
-            - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.camunda.zeebe.exporter.ElasticsearchExporter
-            - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_URL=http://elasticsearch:9200
-            - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_BULK_SIZE=1
-        ports:
-            - 26500:26500
-        volumes:
-            - zeebe:/usr/local/zeebe/data
-        networks:
-            - camunda-cloud
-        depends_on:
-            - elasticsearch
+  zeebe:
+    image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-8.0.0}
+    container_name: zeebe
+    environment:
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.camunda.zeebe.exporter.ElasticsearchExporter
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_URL=http://elasticsearch:9200
+      - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_ARGS_BULK_SIZE=1
+    ports:
+      - 26500:26500
+    volumes:
+      - zeebe:/usr/local/zeebe/data
+    networks:
+      - camunda-cloud
+    depends_on:
+      - elasticsearch
 
-    operate:
-        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.3.5}
-        container_name: operate
-        environment:
-            - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
-            - CAMUNDA_OPERATE_ELASTICSEARCH_URL=http://elasticsearch:9200
-            - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_URL=http://elasticsearch:9200
-        ports:
-            - 8080:8080
-        networks:
-            - camunda-cloud
-        depends_on:
-            - elasticsearch
+  operate:
+    image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.3.5}
+    container_name: operate
+    environment:
+      - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
+      - CAMUNDA_OPERATE_ELASTICSEARCH_URL=http://elasticsearch:9200
+      - CAMUNDA_OPERATE_ZEEBEELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+      - 8080:8080
+    networks:
+      - camunda-cloud
+    depends_on:
+      - elasticsearch
 
-    tasklist:
-        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.3.5}
-        container_name: tasklist
-        environment:
-            - CAMUNDA_TASKLIST_ZEEBE_GATEWAYADDRESS=zeebe:26500
-            - CAMUNDA_TASKLIST_ELASTICSEARCH_URL=http://elasticsearch:9200
-            - CAMUNDA_TASKLIST_ZEEBEELASTICSEARCH_URL=http://elasticsearch:9200
-        ports:
-            - 8081:8080
-        networks:
-            - camunda-cloud
-        depends_on:
-            - elasticsearch
+  tasklist:
+    image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.3.5}
+    container_name: tasklist
+    environment:
+      - CAMUNDA_TASKLIST_ZEEBE_GATEWAYADDRESS=zeebe:26500
+      - CAMUNDA_TASKLIST_ELASTICSEARCH_URL=http://elasticsearch:9200
+      - CAMUNDA_TASKLIST_ZEEBEELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+      - 8081:8080
+    networks:
+      - camunda-cloud
+    depends_on:
+      - elasticsearch
 
-    elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION:-7.16.1}
-        container_name: elasticsearch
-        environment:
-            - cluster.name=camunda-cloud
-            - discovery.type=single-node
-            - bootstrap.memory_lock=true
-            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-        ulimits:
-            memlock:
-                soft: -1
-                hard: -1
-        volumes:
-            - elastic:/usr/share/elasticsearch/data
-        networks:
-            - camunda-cloud
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION:-7.16.1}
+    container_name: elasticsearch
+    environment:
+      - cluster.name=camunda-cloud
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elastic:/usr/share/elasticsearch/data
+    networks:
+      - camunda-cloud
 
 
 volumes:
-    zeebe:
-        driver: local
-    elastic:
-        driver: local
+  zeebe:
+    driver: local
+  elastic:
+    driver: local
 
 networks:
-    camunda-cloud:
-        driver: bridge
+  camunda-cloud:
+    driver: bridge
