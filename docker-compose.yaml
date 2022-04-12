@@ -2,7 +2,7 @@ version: "3"
 
 services:
     zeebe:
-        image: camunda/zeebe:${CAMUNDA_CLOUD_VERSION:-1.3.5}
+        image: camunda/zeebe:${CAMUNDA_PLATFORM_VERSION:-8.0.0}
         container_name: zeebe
         environment:
             - ZEEBE_BROKER_EXPORTERS_ELASTICSEARCH_CLASSNAME=io.camunda.zeebe.exporter.ElasticsearchExporter
@@ -13,12 +13,12 @@ services:
         volumes:
             - zeebe:/usr/local/zeebe/data
         networks:
-            - camunda-cloud
+            - camunda-platform
         depends_on:
             - elasticsearch
 
     operate:
-        image: camunda/operate:${CAMUNDA_CLOUD_VERSION:-1.3.5}
+        image: camunda/operate:${CAMUNDA_PLATFORM_VERSION:-8.0.0}
         container_name: operate
         environment:
             - CAMUNDA_OPERATE_ZEEBE_GATEWAYADDRESS=zeebe:26500
@@ -27,12 +27,12 @@ services:
         ports:
             - 8080:8080
         networks:
-            - camunda-cloud
+            - camunda-platform
         depends_on:
             - elasticsearch
 
     tasklist:
-        image: camunda/tasklist:${CAMUNDA_CLOUD_VERSION:-1.3.5}
+        image: camunda/tasklist:${CAMUNDA_PLATFORM_VERSION:-8.0.0}
         container_name: tasklist
         environment:
             - CAMUNDA_TASKLIST_ZEEBE_GATEWAYADDRESS=zeebe:26500
@@ -41,15 +41,15 @@ services:
         ports:
             - 8081:8080
         networks:
-            - camunda-cloud
+            - camunda-platform
         depends_on:
             - elasticsearch
 
     elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION:-7.16.1}
+        image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION:-7.17.0}
         container_name: elasticsearch
         environment:
-            - cluster.name=camunda-cloud
+            - cluster.name=camunda-platform
             - discovery.type=single-node
             - bootstrap.memory_lock=true
             - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -60,7 +60,7 @@ services:
         volumes:
             - elastic:/usr/share/elasticsearch/data
         networks:
-            - camunda-cloud
+            - camunda-platform
 
 
 volumes:
@@ -70,5 +70,5 @@ volumes:
         driver: local
 
 networks:
-    camunda-cloud:
+    camunda-platform:
         driver: bridge

@@ -1,7 +1,7 @@
-# Camunda Cloud - Get Started - Java
+# Camunda Platform 8 - Get Started - Java
 
 This guide explains how to setup a Java project to automate a process using
-[Camunda Cloud](https://camunda.com/products/cloud/).
+[Camunda Platform 8](https://camunda.com/products/cloud/).
 
 # Install dependencies
 
@@ -19,11 +19,11 @@ provides a Zeebe client.
 
 # Create Client
 
-If we want to connect to a Camunda Cloud SaaS cluster we need the `clusterId`
+If we want to connect to a Camunda Platform 8 SaaS cluster we need the `clusterId`
 from the [Clusters details
-page](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/create-cluster),
+page](https://docs.camunda.io/docs/components/console/manage-clusters/create-cluster/),
 a `clientId` and `clientSecret` from a [client credentials
-pair](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/manage-api-clients). 
+pair](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/). 
 
 The credentails can be specified in the client builder.
 
@@ -36,7 +36,7 @@ ZeebeClient client = ZeebeClient.newCloudClientBuilder()
         .build()
 ```
 
-If you are using a self managed Camunda Cloud cluster, you create the default
+If you are using a self managed Camunda Platform 8 cluster, you create the default
 client and have to disable security.
 
 ```java
@@ -45,11 +45,11 @@ ZeebeClient client = ZeebeClient.newClientBuilder().usePlaintext().build();
 
 # Deploy Process and Start Instance
 
-To deploy a process you can use the `newDeployCommand` method, which allows
+To deploy a process you can use the `newDeployResourceCommand` method, which allows
 to specify a list of classpath resources to be deployed.
 
 ```java
-client.newDeployCommand()
+client.newDeployResourceCommand()
           .addResourceFromClasspath("send-email.bpmn")
           .send()
           .join();
@@ -129,4 +129,4 @@ send().whenComplete((result, exception) -> {})
 ```
 This registers a callback to be executed if the command on the workflow engine was executed or resulted in an exception. This allows for parallelism, which is especially interesting in workers. 
 
-This is discussed in more detail in [this blog post about writing good workers for Camunda Cloud](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).
+This is discussed in more detail in [this blog post about writing good workers for Camunda Platform 8](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).

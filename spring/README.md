@@ -1,7 +1,7 @@
-# Camunda Cloud - Get Started - Spring Boot
+# Camunda Platform 8 - Get Started - Spring Boot
 
 This guide explains how to setup a Spring Boot project to automate a process using
-[Camunda Cloud](https://camunda.com/products/cloud/).
+[Camunda Platform 8](https://camunda.com/products/cloud/).
 
 # Install dependencies
 
@@ -18,11 +18,11 @@ provides a Zeebe client.
 
 # Create Client
 
-If we want to connect to a Camunda Cloud SaaS cluster we need the `clusterId`
+If we want to connect to a Camunda Platform 8 SaaS cluster we need the `clusterId`
 from the [Clusters details
-page](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/create-cluster),
+page](https://docs.camunda.io/docs/components/console/manage-clusters/create-cluster/),
 a `clientId` and `clientSecret` from a [client credentials
-pair](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/manage-api-clients). 
+pair](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/). 
 
 The credentails can be added to the application.properties.
 
@@ -32,7 +32,7 @@ zeebe.client.cloud.clientId=GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z
 zeebe.client.cloud.clientSecret=.RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ
 ```
 
-If you are using a self managed Camunda Cloud cluster, you create the client
+If you are using a self managed Camunda Platform 8 cluster, you create the client
 using the following application config, see
 [application.localhost.yaml](src/main/resources/application.localhost.properties).
 
@@ -154,4 +154,4 @@ send().whenComplete((result, exception) -> {})
 ```
 This registers a callback to be executed if the command on the workflow engine was executed or resulted in an exception. This allows for parallelism, which is especially interesting in workers. 
 
-This is discussed in more detail in [this blog post about writing good workers for Camunda Cloud](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).
+This is discussed in more detail in [this blog post about writing good workers for Camunda Platform 8](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).

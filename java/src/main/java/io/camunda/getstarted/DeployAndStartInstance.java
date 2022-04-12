@@ -12,7 +12,7 @@ public class DeployAndStartInstance {
 
   public static void main(String[] args) {
     try (ZeebeClient client = ZeebeClientFactory.getZeebeClient()) {
-      client.newDeployCommand()
+      client.newDeployResourceCommand()
           .addResourceFromClasspath("send-email.bpmn")
           .send()
           .join();

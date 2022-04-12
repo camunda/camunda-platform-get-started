@@ -1,7 +1,7 @@
-# Camunda Cloud - Get Started - Go
+# Camunda Platform 8 - Get Started - Go
 
 This guide explains how to set up a Go project to automate a process using 
-[Camunda Cloud](https://camunda.com/products/cloud/).
+[Camunda Platform 8](https://camunda.com/products/cloud/).
 
 # Install dependencies
 
@@ -17,17 +17,17 @@ go get github.com/camunda/zeebe/clients/go/v8@v8.0.0
 
 # Create Client
 
-If we want to connect to a Camunda Cloud SaaS cluster we need the `clusterId`
+If we want to connect to a Camunda Platform 8 SaaS cluster we need the `clusterId`
 from the [Clusters details
-page](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/create-cluster),
+page](https://stage.docs.camunda.io/docs/components/modeler/bpmn/service-tasks/),
 a `clientId` and `clientSecret` from a [client credentials
-pair](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/manage-api-clients).
+pair](https://stage.docs.camunda.io/docs/components/modeler/bpmn/service-tasks/).
 
 The credentials can be specified by implementing your own 
-[zbc.CredentialsProvider](https://pkg.go.dev/github.com/camunda-cloud/zeebe/clients/go/pkg/zbc#CredentialsProvider) or
+[zbc.CredentialsProvider](https://pkg.go.dev/github.com/camunda/zeebe/clients/go/pkg/zbc#CredentialsProvider) or
 using the existing 
-[OAuthCredentialsProvider](https://pkg.go.dev/github.com/camunda-cloud/zeebe/clients/go/pkg/zbc#OAuthCredentialsProvider)
-which is compatible with Camunda Cloud SaaS clusters out of the box.
+[OAuthCredentialsProvider](https://pkg.go.dev/github.com/camunda/zeebe/clients/go/pkg/zbc#OAuthCredentialsProvider)
+which is compatible with Camunda Platform 8 SaaS clusters out of the box.
 
 ```golang
 credentials := zbc.NewOAuthCredentialsProvider(&zbc.OAuthProviderConfig{
@@ -54,7 +54,7 @@ export ZEEBE_CLIENT_SECRET='[Client Secret]'
 export ZEEBE_AUTHORIZATION_SERVER_URL='[OAuth API]'
 ```
 
-If you are using a self managed Camunda Cloud cluster, you create the default
+If you are using a self managed Camunda Platform 8 cluster, you create the default
 client and have to disable security.
 
 ```golang
@@ -155,7 +155,7 @@ If you cannot use the `Makefile`, you must follow the following steps to run the
 - Start the external dependencies: Elasticsearch, Zeebe, Operate, and Tasklist.
   You can use the [docker-compose.yaml](../docker-compose.yaml) file for this, i.e.
   `docker-compose -f ../docker-compose.yaml up -d`
-- Build the sample application by running `go build -o example github.com/camunda-cloud/camunda-cloud-get-started/go`
+- Build the sample application by running `go build -o example github.com/camunda/camunda-platform-get-started/go`
 - Wait until Zeebe is ready to accept commands
 - Run the sample application, i.e. `./example`
 
