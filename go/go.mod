@@ -1,4 +1,4 @@
-module github.com/camunda-cloud/camunda-cloud-get-started/go
+module github.com/camunda/camunda-platform-get-started/go
 
 go 1.17
 

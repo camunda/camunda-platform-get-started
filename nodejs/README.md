@@ -1,7 +1,7 @@
-# Camunda Cloud - Get Started - Node.js
+# Camunda Platform 8 - Get Started - Node.js
 
 This guide explains how to setup a node.js project to automate a process using
-[Camunda Cloud](https://camunda.com/products/cloud/).
+[Camunda Platform 8](https://camunda.com/products/cloud/).
 
 # Install dependencies
 
@@ -14,11 +14,11 @@ npm install --save zeebe-node
 
 # Create Client
 
-If we want to connect to a Camunda Cloud SaaS cluster we need the `clusterId`
+If we want to connect to a Camunda Platform 8 SaaS cluster we need the `clusterId`
 from the [Clusters details
-page](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/create-cluster),
+page](https://docs.camunda.io/docs/components/console/manage-clusters/create-cluster/),
 a `clientId` and `clientSecret` from a [client credentials
-pair](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/manage-api-clients). 
+pair](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/). 
 
 ```javascript
 const { ZBClient } = require('zeebe-node')
@@ -32,7 +32,7 @@ const zbc = new ZBClient({
 })
 ```
 
-If you are using a self managed Camunda Cloud cluster, you create the client
+If you are using a self managed Camunda Platform 8 cluster, you create the client
 without parameters.
 
 ```javascript

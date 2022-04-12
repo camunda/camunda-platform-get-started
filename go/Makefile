@@ -1,7 +1,7 @@
 # build: builds the example application
 .PHONY: build
 build:
-	@go build -o example github.com/camunda-cloud/camunda-cloud-get-started/go
+	@go build -o example github.com/camunda/camunda-platform-get-started/go
 
 # fmt: runs the gofmt in order to format all go files
 .PHONY: fmt

@@ -1,7 +1,7 @@
-# Camunda Cloud - Get Started - C# Client
+# Camunda Platform 8 - Get Started - C# Client
 
 This guide explains how to setup a csharp project to automate a process using
-[Camunda Cloud](https://camunda.com/products/cloud/).
+[Camunda Platform 8](https://camunda.com/products/cloud/).
 
 For the complete code see the [`Program.cs`](Program.cs) file. You can run it using the following command.
 
@@ -12,13 +12,13 @@ dotnet run
 # Install dependencies
 
 The open source library
-[zeebe-client-csharp](https://docs.camunda.io/docs/product-manuals/clients/other-clients/c-sharp)
+[zeebe-client-csharp](https://docs.camunda.io/docs/apis-clients/community-clients/c-sharp/)
 provides a Zeebe client. The nuget package is called `zb-client` and can be found [here](https://www.nuget.org/packages/zb-client).
 
 # Create Client
 
-If we want to connect to a Camunda Cloud SaaS cluster we need the contact point, also know as `ZEEBE_ADDRESS`.
-Furthermore we need the `clientId` and `clientSecret` all these information we get from the [client credentials](https://docs.camunda.io/docs/product-manuals/cloud-console/manage-clusters/manage-api-clients).
+If we want to connect to a Camunda Platform 8 SaaS cluster we need the contact point, also know as `ZEEBE_ADDRESS`.
+Furthermore we need the `clientId` and `clientSecret` all these information we get from the [client credentials](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/).
 
 The credentails can be specified in the client builder.
 
@@ -55,8 +55,8 @@ var processInstanceResponse = await zeebeClient
 
 # Job Worker
 
-To complete a [service task](https://docs.camunda.io/docs/reference/bpmn-workflows/service-tasks/service-tasks/),
-a [job worker](https://docs.camunda.io/docs/product-manuals/concepts/job-workers) has
+To complete a [service task](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/),
+a [job worker](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/) has
 to be subscribed to the task type defined in the process, i.e. `email`. For this
 the `NewWorker` method can be used.
 
