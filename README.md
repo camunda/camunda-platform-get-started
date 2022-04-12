@@ -7,26 +7,28 @@ During the guide you will use Console, Modeler, Zeebe, Operate, and Tasklist.
 
 # Table of contents
 
-* [Repository structure](#repository-structure)
-* [Setup the environment](#set-up-the-environment)
-* [Model the process](#model-the-process)
-   * [Model the user task form](#model-the-user-task-form)
-   * [Configure user task to use form](#configure-user-task-to-use-form)
-   * [Configure service task](#configure-service-task)
-* [Deploy process](#deploy-process)
-   * [Deploy using Camunda Modeler](#deploy-using-camunda-modeler)
-   * [Deploy using Camunda Platform 8](#deploy-using-camunda-platform-8)
-   * [Deploy using zbctl](#deploy-using-zbctl)
-   * [Deploy using code](#deploy-using-code)
-* [Start process instance](#start-process-instance)
-   * [Start instance using Camunda Modeler](#start-instance-using-camunda-modeler)
-   * [Start instance using Camunda Platform 8](#start-instance-using-camunda-platform-8)
-   * [Start instance using zbctl](#start-instance-using-zbctl)
-   * [Start instance using code](#start-instance-using-code)
-* [Complete the user task](#complete-the-user-task)
-* [Complete the service task](#complete-the-service-task)
-* [Further references](#further-references)
-* [Local setup](#local-setup)
+- [Camunda Platform 8 - Get Started](#camunda-platform-8---get-started)
+- [Table of contents](#table-of-contents)
+- [Repository structure](#repository-structure)
+- [Set up the environment](#set-up-the-environment)
+- [Model the process](#model-the-process)
+  - [Model the user task form](#model-the-user-task-form)
+  - [Configure user task to use form](#configure-user-task-to-use-form)
+  - [Configure service task](#configure-service-task)
+- [Deploy process](#deploy-process)
+  - [Deploy using Camunda Modeler](#deploy-using-camunda-modeler)
+  - [Deploy using Web Modeler](#deploy-using-web-modeler)
+  - [Deploy using zbctl](#deploy-using-zbctl)
+  - [Deploy using code](#deploy-using-code)
+- [Start process instance](#start-process-instance)
+  - [Start instance using Camunda Modeler](#start-instance-using-camunda-modeler)
+  - [Start instance using Web Modeler](#start-instance-using-web-modeler)
+  - [Start instance using zbctl](#start-instance-using-zbctl)
+  - [Start instance using code](#start-instance-using-code)
+- [Complete the user task](#complete-the-user-task)
+- [Complete the service task](#complete-the-service-task)
+- [Further references](#further-references)
+  - [Local setup](#local-setup)
 
 # Repository structure
 
@@ -47,13 +49,9 @@ we use the Camunda Platform 8 SaaS offering at https://camunda.io.
 
 If you prefer a local setup, visit the [end of this guide](#local-setup).
 
-After the sign-up and log-in at https://camunda.io, a cluster is already available with the latest stable version of Zeebe and the name **Test Cluster**.
+After the sign-up and log-in at https://camunda.io, we need to [create a new cluster](https://docs.camunda.io/docs/guides/getting-started/create-your-cluster/) with the latest stable version of Zeebe and the name **Test Cluster**.
 
-![Cloud Cluster](images/cloud-cluster.png)
-
-If there is no cluster available, [create a new
-one](https://docs.camunda.io/docs/components/console/manage-clusters/create-cluster/)
-with the latest stable version of Zeebe.
+![Camunda Platform Cluster](images/cluster.png)
 
 After the cluster is available, we need to create a pair of [Client
 Credentials](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/).
@@ -81,10 +79,7 @@ scaffolding for this process automation example and will not actually send
 an email. This can be a task for you to extend the example and connect to a mail
 provider.
 
-To create the process, we use the desktop [Camunda Modeler] or [Cloud
-Modeler].
-
-![Model Process](images/model-process.gif)
+To create the process, we use the desktop [Camunda Modeler] or [Web Modeler].
 
 Find the finished process at [process/send-email.bpmn](process/send-email.bpmn).
 
@@ -93,9 +88,7 @@ Find the finished process at [process/send-email.bpmn](process/send-email.bpmn).
 To help users complete the user task **Enter Message**, we create a user
 task form using the modeler.
 
-Use [Camunda Modeler] or [Cloud Modeler] to create the form.
-
-![Model Form](images/model-form.gif)
+Use [Camunda Modeler] or [Web Modeler] to create the form.
 
 Find the finished form at [process/enter-email-message.form](process/enter-email-message.form).
 
@@ -119,31 +112,19 @@ complete them. The [Camunda Platform 8 Documentation] contains more information 
 # Deploy process
 
 Deploy the process using [Camunda
-Modeler](#deploy-using-camunda-modeler), [Cloud
-Modeler](#deploy-using-camunda-cloud), [zbctl](#deploy-using-zbctl), or your [own
+Modeler](#deploy-using-camunda-modeler), [Web
+Modeler](#deploy-using-web-modeler), [zbctl](#deploy-using-zbctl), or your [own
 code](#deploy-using-code).
 
 ## Deploy using Camunda Modeler
 
 To deploy the [process](process/send-email.bpmn) using Camunda Modeler,
-follow these steps:
+follow [these steps](https://docs.camunda.io/docs/components/modeler/desktop-modeler/connect-to-camunda-cloud/).
 
-1. Select **Deploy current diagram**.
-    ![Deploy Button](images/camunda-modeler-deploy-button.png)
-2. Configure the endpoint for the deployment. For Camunda Platform 8,
-   you need the cluster id from the cluster details page, and the [client
-   credentials](#-cloud) you created.
-    ![Deploy Camunda Platform 8](images/camunda-modeler-deploy-modal.png)
+## Deploy using Web Modeler
 
-## Deploy using Cloud Modeler
-
-To deploy the [process](process/send-email.bpmn) using Cloud Modeler,
-follow these steps:
-
-1. Select **Deployment > Save and Deploy**.
-    ![Deploy Button](images/cloud-modeler-deploy-button.png)
-2. Select the cluster to deploy the diagram on.
-    ![Deploy Camunda Platform 8](images/cloud-modeler-deploy-modal.png)
+To deploy the [process](process/send-email.bpmn) using Web Modeler,
+follow [these steps](https://stage.docs.camunda.io/docs/components/modeler/web-modeler/save-and-deploy/).
 
 ## Deploy using zbctl
 
@@ -151,7 +132,7 @@ To the deploy the [process](process/send-email.bpmn) using `zbctl`, use the
 following command:
 
 ```bash
-zbctl deploy send-email.bpmn \
+zbctl deploy resource send-email.bpmn \
   --address 365eed98-16c1-4096-bb57-eb8828ed131e.zeebe.camunda.io:443 \
   --clientId 'GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z' \
   --clientSecret '.RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ'
@@ -169,26 +150,17 @@ this, visit the programming language [specific folders](#repository-structure).
 # Start process instance
 
 Start a new instance of the process using [Camunda
-Modeler](#start-instance-using-camunda-modeler), [Cloud
-Modeler](#start-instance-using-camunda-cloud), [zbctl](#start-instance-using-zbctl), or your [own
+Modeler](#start-instance-using-camunda-modeler), [Web
+Modeler](#start-instance-using-web-modeler), [zbctl](#start-instance-using-zbctl), or your [own
 code](#start-instance-using-code).
 
 ## Start instance using Camunda Modeler
 
-After the process is deployed, click **Start Current Diagram** to start an instance of the process with Camunda Modeler.
+After the process is deployed, follow [these steps](click **Start Current Diagram**) to start an instance of the process with Camunda Modeler.
 
-![Start Instance Button](images/camunda-modeler-start-instance-button.png)
+## Start instance using Web Modeler
 
-## Start instance using Cloud Modeler
-
-To start an instance of the process using Cloud Modeler, follow these steps:
-
-1. Select **Deployment > Start Instance**.
-![Start Instance Button](images/cloud-modeler-start-instance-button.png)
-2. Specify **optional** [process
-   variables](https://docs.camunda.io/docs/product-manuals/concepts/variables)
-   before starting the instance.
-![Start Instance Camunda Platform 8](images/cloud-modeler-start-instance-modal.png)
+To start an instance of the process using Web Modeler, follow [these steps](https://stage.docs.camunda.io/docs/components/modeler/web-modeler/start-instance/).
 
 ## Start instance using zbctl
 
@@ -246,8 +218,6 @@ jobs with the same task type.
 
 To define the task type, we select the service task in the diagram and use
 the properties panel to set the task type to `email`.
-
-![Task Type](images/camunda-modeler-task-type.png)
 
 To implement the logic, we implement a job worker. Check out the
 programming language [specific folders](#repository-structure) to find the job
