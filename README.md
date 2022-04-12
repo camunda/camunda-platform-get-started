@@ -124,7 +124,7 @@ follow [these steps](https://docs.camunda.io/docs/components/modeler/desktop-mod
 ## Deploy using Web Modeler
 
 To deploy the [process](process/send-email.bpmn) using Web Modeler,
-follow [these steps](https://stage.docs.camunda.io/docs/components/modeler/web-modeler/save-and-deploy/).
+follow [these steps](https://docs.camunda.io/docs/components/modeler/web-modeler/save-and-deploy/).
 
 ## Deploy using zbctl
 
@@ -160,7 +160,7 @@ After the process is deployed, follow [these steps](click **Start Current Diagra
 
 ## Start instance using Web Modeler
 
-To start an instance of the process using Web Modeler, follow [these steps](https://stage.docs.camunda.io/docs/components/modeler/web-modeler/start-instance/).
+To start an instance of the process using Web Modeler, follow [these steps](https://docs.camunda.io/docs/components/modeler/web-modeler/start-instance/).
 
 ## Start instance using zbctl
 
@@ -186,7 +186,7 @@ visit the programming language [specific folders](#repository-structure).
 # Complete the user task
 
 The first task of the process is the [user
-task](https://stage.docs.camunda.io/docs/components/modeler/bpmn/user-tasks/)
+task](https://docs.camunda.io/docs/components/modeler/bpmn/user-tasks/)
 **Enter Message**.
 
 ![Process](images/send-email.png)
@@ -206,13 +206,13 @@ Take the following steps:
 # Complete the service task
 
 The second task of the process is the [service
-task](https://stage.docs.camunda.io/docs/components/modeler/bpmn/service-tasks/)
+task](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/)
 **Send Email**.
 
 ![Process](images/send-email.png)
 
 To complete the service task, we need to implement the business logic. Therefore, we must create a [job
-worker](https://stage.docs.camunda.io/docs/components/concepts/job-workers/) for
+worker](https://docs.camunda.io/docs/components/concepts/job-workers/) for
 the task type we defined in the diagram. The job worker will subscribe to all
 jobs with the same task type.
 
@@ -234,10 +234,10 @@ Slack](https://camunda-cloud.slack.com) community.
 To run the getting started guide against a locally-hosted instance, set up the following
 components:
 
-- [Zeebe](https://stage.docs.camunda.io/docs/self-managed/zeebe-deployment/)
-- [Operate](https://stage.docs.camunda.io/docs/self-managed/operate-deployment/install-and-start/)
-- [Tasklist](https://stage.docs.camunda.io/docs/self-managed/tasklist-deployment/install-and-start/)
-- [Camunda Modeler](https://stage.docs.camunda.io/docs/components/modeler/desktop-modeler/install-the-modeler/)
+- [Zeebe](https://docs.camunda.io/docs/self-managed/zeebe-deployment/)
+- [Operate](https://docs.camunda.io/docs/self-managed/operate-deployment/install-and-start/)
+- [Tasklist](https://docs.camunda.io/docs/self-managed/tasklist-deployment/install-and-start/)
+- [Camunda Modeler](https://docs.camunda.io/docs/components/modeler/desktop-modeler/install-the-modeler/)
 
 If docker is available in your system, the [docker-compose.yaml](docker-compose.yaml) in the root
 folder can be used to spin up a local environment.
@@ -259,5 +259,5 @@ See the following additional resources:
 - [Camunda Platform 8 Documentation]
 
 [Camunda Modeler]: https://camunda.com/download/modeler/
-[Web Modeler]: https://stage.docs.camunda.io/docs/components/modeler/web-modeler/launch-cloud-modeler/
+[Web Modeler]: https://docs.camunda.io/docs/components/modeler/web-modeler/launch-cloud-modeler/
 [Camunda Platform 8 Documentation]: https://docs.camunda.io

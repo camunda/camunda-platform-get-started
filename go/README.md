@@ -19,9 +19,9 @@ go get github.com/camunda/zeebe/clients/go/v8@v8.0.0
 
 If we want to connect to a Camunda Platform 8 SaaS cluster we need the `clusterId`
 from the [Clusters details
-page](https://stage.docs.camunda.io/docs/components/modeler/bpmn/service-tasks/),
+page](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/),
 a `clientId` and `clientSecret` from a [client credentials
-pair](https://stage.docs.camunda.io/docs/components/modeler/bpmn/service-tasks/).
+pair](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/).
 
 The credentials can be specified by implementing your own 
 [zbc.CredentialsProvider](https://pkg.go.dev/github.com/camunda/zeebe/clients/go/pkg/zbc#CredentialsProvider) or
