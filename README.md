@@ -28,7 +28,7 @@ During the guide you will use Console, Modeler, Zeebe, Operate, and Tasklist.
 - [Complete the user task](#complete-the-user-task)
 - [Complete the service task](#complete-the-service-task)
 - [Further references](#further-references)
-  - [Local setup](#local-setup)
+  - [Developer setup of Camunda 8](#developer-setup)
 
 # Repository structure
 
@@ -229,35 +229,6 @@ Find more information in the [Camunda Platform 8 Documentation], or join the [Ca
 Forum](https://forum.camunda.io) and [Camunda Platform 8
 Slack](https://camunda-cloud.slack.com) community.
 
-## Local setup
+## Developer setup
 
-To run the getting started guide against a locally-hosted instance, set up the following
-components:
-
-- [Zeebe](https://docs.camunda.io/docs/self-managed/zeebe-deployment/)
-- [Operate](https://docs.camunda.io/docs/self-managed/operate-deployment/install-and-start/)
-- [Tasklist](https://docs.camunda.io/docs/self-managed/tasklist-deployment/install-and-start/)
-- [Camunda Modeler](https://docs.camunda.io/docs/components/modeler/desktop-modeler/install-the-modeler/)
-
-If docker is available in your system, the [docker-compose.yaml](docker-compose.yaml) in the root
-folder can be used to spin up a local environment.
-
-```
-docker-compose up -d
-```
-
-After this, Zeebe is available under `localhost:26500`. Disable security
-inside the client when connecting to it.
-
-Operate will be available under http://localhost:8080 and Tasklist will be
-available under http://localhost:8081.
-
-See the following additional resources:
-
-- [Camunda Modeler]
-- [Web Modeler]
-- [Camunda Platform 8 Documentation]
-
-[Camunda Modeler]: https://camunda.com/download/modeler/
-[Web Modeler]: https://docs.camunda.io/docs/components/modeler/web-modeler/launch-cloud-modeler/
-[Camunda Platform 8 Documentation]: https://docs.camunda.io
+To run the getting started guide against a locally-hosted instance, follow the [Camunda 8 Platform Deployment Guide](https://docs.camunda.io/docs/self-managed/platform-deployment/).
