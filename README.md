@@ -47,7 +47,7 @@ The repository contains the following folders:
 To follow this guide, we need a running Camunda Platform 8 cluster. For this purpose,
 we use the Camunda Platform 8 SaaS offering at https://camunda.io.
 
-If you prefer a local setup, visit the [end of this guide](#local-setup).
+If you prefer a local setup, visit the [end of this guide](#developer-setup).
 
 After the sign-up and log-in at https://camunda.io, we need to [create a new cluster](https://docs.camunda.io/docs/guides/getting-started/create-your-cluster/) with the latest stable version of Zeebe and the name **Test Cluster**.
 
