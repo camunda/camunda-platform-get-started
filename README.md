@@ -225,7 +225,7 @@ worker implementations.
 
 # Further references
 
-Find more information in the [Camunda Platform 8 Documentation], or join the [Camunda Platform 8
+Find more information in the [Camunda Platform 8 Documentation](https://docs.camunda.io), or join the [Camunda Platform 8
 Forum](https://forum.camunda.io) and [Camunda Platform 8
 Slack](https://camunda-cloud.slack.com) community.
 
