@@ -1,14 +1,12 @@
 package io.camunda.getstarted;
 
 import io.camunda.zeebe.client.api.response.ActivatedJob;
-import io.camunda.zeebe.spring.client.EnableZeebeClient;
 import io.camunda.zeebe.spring.client.annotation.ZeebeWorker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-@EnableZeebeClient
 public class EmailWorker {
 
   private final static Logger LOG = LoggerFactory.getLogger(EmailWorker.class);
