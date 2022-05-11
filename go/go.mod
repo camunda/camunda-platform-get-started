@@ -2,7 +2,7 @@ module github.com/camunda/camunda-platform-get-started/go
 
 go 1.17
 
-require github.com/camunda/zeebe/clients/go/v8 v8.0.1
+require github.com/camunda/zeebe/clients/go/v8 v8.0.2
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 // indirect
