@@ -13,6 +13,9 @@ namespace csharp
 {
     class Program
     {
+        private static readonly string ClientID = "YOUR_CLIENT_ID";
+        private static readonly string ClientSecret = "YOUR_CLIENT_SECRET";
+        private static readonly string ClusterAddress = "YOUR_CLUSTER.bru-2.zeebe.camunda.io:443";
         private static readonly ILoggerFactory LoggerFactory = new NLogLoggerFactory();
         private static readonly ILogger<Program> Log = LoggerFactory.CreateLogger<Program>();
         private const string LogMessage = "Started instance for" +
@@ -76,9 +79,9 @@ namespace csharp
         {
             return CamundaCloudClientBuilder
                 .Builder()
-                .UseClientId("kYbf5pwF3WP_ZuOU_13fde~uG7M_IaGZ")
-                .UseClientSecret("1nl8HNRd8INmL4kUcMcZOPCbjk2ZNUdacsGeOOotkknHUeqV9L~1eJFztsSZ8kpq")
-                .UseContactPoint("6ce770b8-cd6d-4977-854c-bff92d0d3d98.zeebe.camunda.io:443")
+                .UseClientId(ClientID)
+                .UseClientSecret(ClientSecret)
+                .UseContactPoint(ClusterAddress)
                 .UseLoggerFactory(LoggerFactory) // optional
                 .Build();
         }
