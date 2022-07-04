@@ -148,6 +148,8 @@ To make an job available, a user task has to be completed, follow the instructio
 
 # Sample application
 
+First, setup the client credentials to connect to an existing Zeebe cluster, either local or in Camunda Cloud. The easiest way to do this is via environment variables. See [here](https://docs.camunda.io/docs/apis-clients/go-client/get-started/) for more on how to do this.
+
 ```bash
 go build -o example github.com/camunda/camunda-platform-get-started/go
 ./example

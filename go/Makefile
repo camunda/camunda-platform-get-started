@@ -23,21 +23,8 @@ check: deps
 deps:
 	@go install github.com/google/addlicense/...@latest
 
-# run: runs the example
-.PHONY: run
-run: build
-	@echo "wait until server is ready, at least 30 seconds..." && sleep 30 && ./example
-
-.PHONY: start-docker
-start-docker:
-	@docker-compose -f ../docker-compose.yaml up -d
-
-.PHONY: stop-docker
-stop-docker:
-	@docker-compose -f ../docker-compose.yaml down -v
-
 # all: gets dependencies, formats code, adds licensing, builds, runs checks, starts docker dependencies,
 # runs application, stops docker dependencies
 .DEFAULT: all
 .PHONY: all
-all: deps fmt license build check start-docker run stop-docker
+all: deps fmt license build check
