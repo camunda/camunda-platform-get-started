@@ -5,6 +5,8 @@ This guide explains how to set up a Go project to automate a process using
 
 # Install dependencies
 
+The client requires you to install Go with a version greater than or equal to 1.17. See [here](https://go.dev/doc/install) on how to do this for your platform.
+
 The open source library
 [github.com/camunda/zeebe/clients/go/v8](https://docs.camunda.io/docs/apis-clients/go-client/) provides a Zeebe client 
 for Go.
@@ -12,7 +14,7 @@ for Go.
 To install using Go modules, simply run:
 
 ```sh
-go get github.com/camunda/zeebe/clients/go/v8@v8.0.3
+go get github.com/camunda/zeebe/clients/go/v8@v8.0.4
 ```
 
 # Create Client
@@ -147,20 +149,11 @@ To make an job available, a user task has to be completed, follow the instructio
 # Sample application
 
 ```bash
-make all
+go build -o example github.com/camunda/camunda-platform-get-started/go
+./example
 ```
 
-If you cannot use the `Makefile`, you must follow the following steps to run the example:
-
-- Start the external dependencies: Elasticsearch, Zeebe, Operate, and Tasklist.
-  You can use the [docker-compose.yaml](../docker-compose.yaml) file for this, i.e.
-  `docker-compose -f ../docker-compose.yaml up -d`
-- Build the sample application by running `go build -o example github.com/camunda/camunda-platform-get-started/go`
-- Wait until Zeebe is ready to accept commands
-- Run the sample application, i.e. `./example`
-
-Once done, navigate to your Tasklist instance, e.g. [http://localhost:8081](http://localhost:8081) if you used the
-provided docker-compose file.
+Once done, navigate to your Tasklist instance.
 
 From there, claim and complete the user task. You should see corresponding log statements from the sample application
 indicating that it has completed the job, e.g.
