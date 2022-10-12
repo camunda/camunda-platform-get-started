@@ -12,7 +12,7 @@ provides a Zeebe client.
 <dependency>
   <groupId>io.camunda</groupId>
   <artifactId>spring-zeebe-starter</artifactId>
-  <version>8.0.11</version>
+  <version>8.1.0</version>
 </dependency>
 ```
 
@@ -57,14 +57,13 @@ public class ProcessApplication {
 
 # Deploy Process and Start Instance
 
-To deploy a process you can use the annotation `@ZeebeDeployment`, which allows
-to specify a list of classpath resources `classPathResources` to be deployed on
-start up.
+To deploy a process you can use the annotation `@Deployment`, which allows
+to specify a list of `resources` (e.g. from classpath) to be deployed on start up.
 
 ```java
 @SpringBootApplication
 @EnableZeebeClient
-@ZeebeDeployment(resources = "classpath:send-email.bpmn")
+@Deployment(resources = "classpath:send-email.bpmn")
 public class ProcessApplication {
 
   public static void main(String[] args) {
@@ -105,10 +104,10 @@ To complete a
 [service task](https://docs.camunda.io/docs/reference/bpmn-workflows/service-tasks/service-tasks/),
 a [job worker](https://docs.camunda.io/docs/product-manuals/concepts/job-workers) has
 to be subscribed the to task type defined in the process, i.e. `email`. For this
-the `@ZeebeWorker` annotation can be used and the `type` has to be specified.
+the `@JobWorker` annotation can be used and the `type` has to be specified.
 
 ```
-@ZeebeWorker(type = "email", autoComplete = true)
+@JobWorker(type = "email")
 public void sendEmail(final ActivatedJob job) {
   final String message_content = (String) job.getVariablesAsMap().get("message_content");
   LOG.info("Sending email with message content: {}", message_content);
@@ -129,10 +128,12 @@ instructions in [the guide](../README.md#complete-the-user-task).
 
 # Blocking vs. Non-Blocking Code
 
-Some of the code examples above (deploy, start process instance) used
+The code example to start a process instance used 
 ```
 send().join()
 ```
-which is a blocking call to wait for the issues command to be executed on the workflow engine. While this is very straightforward to use and produces easy-to-read code, blocking code is limited in terms of scalability. 
+which is a blocking call to wait for the issues command to be executed on the workflow engine. 
+While this is very straightforward to use and produces easy-to-read code, 
+blocking code is limited in terms of scalability. 
 
 This is discussed in more detail in [this blog post about writing good workers for Camunda Platform 8](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).
