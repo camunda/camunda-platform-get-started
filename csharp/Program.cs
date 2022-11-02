@@ -15,7 +15,7 @@ namespace csharp
     {
         private static readonly string ClientID = "YOUR_CLIENT_ID";
         private static readonly string ClientSecret = "YOUR_CLIENT_SECRET";
-        private static readonly string ClusterAddress = "YOUR_CLUSTER.bru-2.zeebe.camunda.io:443";
+        private static readonly string ClusterAddress = "YOUR_CLUSTER_ID.bru-2.zeebe.camunda.io:443";
         private static readonly ILoggerFactory LoggerFactory = new NLogLoggerFactory();
         private static readonly ILogger<Program> Log = LoggerFactory.CreateLogger<Program>();
         private const string LogMessage = "Started instance for" +

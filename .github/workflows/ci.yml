@@ -1,0 +1,118 @@
+name: CI
+
+on: [push]
+
+jobs:
+  java:
+    name: Java CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          cache: maven
+      - name: Inject C8 client secrets
+        uses: ./.github/actions/inject-c8-client-secrets/
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          cluster-id: ${{ secrets.CLUSTER_ID }}
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
+        working-directory: java
+      - name: Start Process Instance
+        run: mvn --batch-mode exec:java
+        working-directory: java
+
+  spring:
+    name: Spring CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          cache: maven
+      - name: Inject C8 client secrets
+        uses: ./.github/actions/inject-c8-client-secrets/
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          cluster-id: ${{ secrets.CLUSTER_ID }}
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
+        working-directory: spring
+
+  go:
+    name: Go CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+      - name: Inject C8 client secrets
+        uses: ./.github/actions/inject-c8-client-secrets/
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          cluster-id: ${{ secrets.CLUSTER_ID }}
+      - name: Build
+        run: go build -o get-started -v ./...
+        working-directory: go
+
+  nodejs:
+    name: Node.js CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.0
+      - name: Inject C8 client secrets
+        uses: ./.github/actions/inject-c8-client-secrets/
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          cluster-id: ${{ secrets.CLUSTER_ID }}
+      - name: Build
+        run: npm ci
+        working-directory: nodejs
+      - name: Start Process Instance
+        run: node deploy-and-start-instance.js
+        working-directory: nodejs
+
+
+  csharp:
+    name: C# CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+      - name: Inject C8 client secrets
+        uses: ./.github/actions/inject-c8-client-secrets/
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          cluster-id: ${{ secrets.CLUSTER_ID }}
+      - name: Install dependencies
+        run: dotnet restore
+        working-directory: csharp
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+        working-directory: csharp

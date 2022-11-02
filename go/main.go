@@ -75,7 +75,22 @@ func MustReadFile(resourceFile string) []byte {
 }
 
 func MustCreateClient() zbc.Client {
-	client, err := zbc.NewClient(&zbc.ClientConfig{GatewayAddress: "localhost:26500", UsePlaintextConnection: true})
+	credentials, err := zbc.NewOAuthCredentialsProvider(&zbc.OAuthProviderConfig{
+		ClientID:               "YOUR_CLIENT_ID",
+		ClientSecret:           "YOUR_CLIENT_SECRET",
+		AuthorizationServerURL: "https://login.cloud.camunda.io/oauth/token",
+		Audience:               "zeebe.camunda.io",
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	config := zbc.ClientConfig{
+		GatewayAddress:      "YOUR_CLUSTER_ID.bru-2.zeebe.camunda.io:26500",
+		CredentialsProvider: credentials,
+	}
+
+	client, err := zbc.NewClient(&config)
 	if err != nil {
 		panic(err)
 	}
