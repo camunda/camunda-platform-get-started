@@ -1,0 +1,26 @@
+---
+name: Inject C8 client secrets
+
+description: Injects C8 client secrets into getting started examples
+
+inputs:
+  client-id:
+    description: 'The C8 client id'
+    required: true
+  client-secret:
+    description: 'The C8 client secret'
+    required: true
+  cluster-id:
+    description: 'The C8 cluster id'
+    required: true
+
+runs:
+  using: composite
+  steps:
+  - name: Inject C8 client secrets
+    shell: bash
+    run: grep -rl YOUR_CLIENT_ID | xargs sed -i "s/YOUR_CLIENT_ID/${CLIENT_ID}/g;s/YOUR_CLIENT_SECRET/${CLIENT_SECRET}/g;s/YOUR_CLUSTER_ID/${CLUSTER_ID}/g"
+    env:
+      CLIENT_ID: ${{ inputs.client-id }}
+      CLIENT_SECRET: ${{ inputs.client-secret }}
+      CLUSTER_ID: ${{ inputs.cluster-id }}
