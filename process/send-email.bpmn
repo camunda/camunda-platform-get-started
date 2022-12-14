@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_0o87biy" targetNamespace="http://bpmn.io/schema/bpmn" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="1.0.0">
-  <bpmn:process id="send-email" name="Send Email" isExecutable="true">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0o87biy" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="1.0.0">
+  <bpmn:process id="get-started-send-email" name="Get Started - Send Email" isExecutable="true">
     <bpmn:extensionElements>
-      <zeebe:userTaskForm id="userTaskForm_15j79nd">{"components":[{"id":"textfield1","key":"message_content","label":"E-Mail Content","type":"textfield","parent":"default1","path":["components",0],"description":"Please enter the content of the E-Mail message","validate":{"required":true}}],"type":"default","id":"default1","path":[]}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_15j79nd">{
+  "components": [
+    {
+      "id": "textfield1",
+      "key": "message_content",
+      "label": "E-Mail Content",
+      "type": "textfield",
+      "parent": "default1",
+      "path": [
+        "components",
+        0
+      ],
+      "description": "Please enter the content of the E-Mail message",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "get-started-enter-email-message",
+  "path": [],
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.6.0"
+  },
+  "schemaVersion": 5
+}</zeebe:userTaskForm>
     </bpmn:extensionElements>
     <bpmn:startEvent id="StartEvent" name="Email requested">
       <bpmn:outgoing>Flow_19f2xg6</bpmn:outgoing>
@@ -30,19 +56,7 @@
     <bpmn:sequenceFlow id="Flow_156f3q7" sourceRef="sendEmailTask" targetRef="EndEvent" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="send-email">
-      <bpmndi:BPMNEdge id="Flow_156f3q7_di" bpmnElement="Flow_156f3q7">
-        <di:waypoint x="548" y="160" />
-        <di:waypoint x="622" y="160" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0xoo3ml_di" bpmnElement="Flow_0xoo3ml">
-        <di:waypoint x="369" y="160" />
-        <di:waypoint x="448" y="160" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_19f2xg6_di" bpmnElement="Flow_19f2xg6">
-        <di:waypoint x="195" y="160" />
-        <di:waypoint x="269" y="160" />
-      </bpmndi:BPMNEdge>
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="get-started-send-email">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent">
         <dc:Bounds x="159" y="142" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -60,7 +74,20 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0s2tnku_di" bpmnElement="enterMessageTask">
         <dc:Bounds x="269" y="120" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_19f2xg6_di" bpmnElement="Flow_19f2xg6">
+        <di:waypoint x="195" y="160" />
+        <di:waypoint x="269" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xoo3ml_di" bpmnElement="Flow_0xoo3ml">
+        <di:waypoint x="369" y="160" />
+        <di:waypoint x="448" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_156f3q7_di" bpmnElement="Flow_156f3q7">
+        <di:waypoint x="548" y="160" />
+        <di:waypoint x="622" y="160" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
