@@ -231,4 +231,4 @@ Slack](https://camunda-cloud.slack.com) community.
 
 ## Developer setup
 
-To run the getting started guide against a locally-hosted instance, follow the [Camunda 8 Platform Deployment Guide](https://docs.camunda.io/docs/self-managed/platform-deployment/).
+To run the getting started guide against a locally-hosted instance, follow the [Camunda 8 Platform Deployment Guide](https://docs.camunda.io/docs/self-managed/platform-deployment/overview/).
