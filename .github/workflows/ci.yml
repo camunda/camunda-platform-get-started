@@ -12,8 +12,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
-          distribution: 'adopt'
+          java-version: '17'
+          distribution: 'temurin'
           cache: maven
       - name: Inject C8 client secrets
         uses: ./.github/actions/inject-c8-client-secrets/
@@ -37,8 +37,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
-          distribution: 'adopt'
+          java-version: '17'
+          distribution: 'temurin'
           cache: maven
       - name: Inject C8 client secrets
         uses: ./.github/actions/inject-c8-client-secrets/
