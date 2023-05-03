@@ -67,6 +67,8 @@ github.com/camunda/zeebe/clients/go/v8 v8.2.1 h1:8jD4vHQYDlIPGpvimGGEFKmIBcPpRsS
 github.com/camunda/zeebe/clients/go/v8 v8.2.1/go.mod h1:Y6we21faDAKtsEULpzKHV8YP1PkC7RqRanuafrnBoVI=
 github.com/camunda/zeebe/clients/go/v8 v8.2.2-0.20230417163502-82eaf53f0ba8 h1:YEOtZ6jm+v6kf4iLbsoM1cPlG3ssan6EHi0V6rnwiLY=
 github.com/camunda/zeebe/clients/go/v8 v8.2.2-0.20230417163502-82eaf53f0ba8/go.mod h1:Y6we21faDAKtsEULpzKHV8YP1PkC7RqRanuafrnBoVI=
+github.com/camunda/zeebe/clients/go/v8 v8.2.4 h1:OEFi40zwbYShutkQ254YeNtzl1MgvIEmVij95y3n8G8=
+github.com/camunda/zeebe/clients/go/v8 v8.2.4/go.mod h1:Y6we21faDAKtsEULpzKHV8YP1PkC7RqRanuafrnBoVI=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/cespare/xxhash v1.1.0/go.mod h1:XrSqR1VqqWfGrhpAt58auRo0WTKS1nRRg3ghfAqPWnc=
 github.com/cespare/xxhash/v2 v2.1.1/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
