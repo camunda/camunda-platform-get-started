@@ -1,6 +1,6 @@
 module github.com/camunda/camunda-platform-get-started/go
 
-go 1.20
+go 1.19
 
 require github.com/camunda/zeebe/clients/go/v8 v8.2.7
 
