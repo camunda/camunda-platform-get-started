@@ -16,4 +16,5 @@ void (async () => {
 	})
 
 	console.log(result)
+	process.exit(0)
 })()
