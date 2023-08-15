@@ -8,9 +8,9 @@ const zbc = new ZBClient({
 	},
 })
 
-zbc.createWorker({
+const worker = zbc.createWorker({
 	taskType: 'email',
-	taskHandler: (job, _, worker) => {
+	taskHandler: (job) => {
 		const { message_content } = job.variables
 		worker.log(`Sending email with message content: ${message_content}`)
 		job.complete()
