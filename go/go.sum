@@ -617,6 +617,8 @@ github.com/camunda/zeebe/clients/go/v8 v8.2.13 h1:cWiL1XVtszOonr2V4IjM6ZbkOnqHRM
 github.com/camunda/zeebe/clients/go/v8 v8.2.13/go.mod h1:4mpOks0uLXPbOCW82g/H9ZHDfdr90ikvFBWGwDV+fG8=
 github.com/camunda/zeebe/clients/go/v8 v8.2.14 h1:i44S/Q9vMp6SPtqphXkeV9szz+G5kwnzuxIr14JVWXs=
 github.com/camunda/zeebe/clients/go/v8 v8.2.14/go.mod h1:4mpOks0uLXPbOCW82g/H9ZHDfdr90ikvFBWGwDV+fG8=
+github.com/camunda/zeebe/clients/go/v8 v8.2.15 h1:p3AMcnABiu+o820DS3bbyyYi9aknfZO+oIvE+Eft0Cw=
+github.com/camunda/zeebe/clients/go/v8 v8.2.15/go.mod h1:4mpOks0uLXPbOCW82g/H9ZHDfdr90ikvFBWGwDV+fG8=
 github.com/cenkalti/backoff/v4 v4.1.1/go.mod h1:scbssz8iZGpm3xbr14ovlUdkxfGXNInqkPWOWmG2CLw=
 github.com/cenkalti/backoff/v4 v4.1.2/go.mod h1:scbssz8iZGpm3xbr14ovlUdkxfGXNInqkPWOWmG2CLw=
 github.com/cenkalti/backoff/v4 v4.1.3/go.mod h1:scbssz8iZGpm3xbr14ovlUdkxfGXNInqkPWOWmG2CLw=
