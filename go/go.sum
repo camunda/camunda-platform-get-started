@@ -615,6 +615,8 @@ github.com/bugsnag/osext v0.0.0-20130617224835-0dd3f918b21b/go.mod h1:obH5gd0Bsq
 github.com/bugsnag/panicwrap v0.0.0-20151223152923-e2c28503fcd0/go.mod h1:D/8v3kj0zr8ZAKg1AQ6crr+5VwKN5eIywRkfhyM/+dE=
 github.com/camunda/zeebe/clients/go/v8 v8.2.13 h1:cWiL1XVtszOonr2V4IjM6ZbkOnqHRMz9clue/xAwpAU=
 github.com/camunda/zeebe/clients/go/v8 v8.2.13/go.mod h1:4mpOks0uLXPbOCW82g/H9ZHDfdr90ikvFBWGwDV+fG8=
+github.com/camunda/zeebe/clients/go/v8 v8.2.14 h1:i44S/Q9vMp6SPtqphXkeV9szz+G5kwnzuxIr14JVWXs=
+github.com/camunda/zeebe/clients/go/v8 v8.2.14/go.mod h1:4mpOks0uLXPbOCW82g/H9ZHDfdr90ikvFBWGwDV+fG8=
 github.com/cenkalti/backoff/v4 v4.1.1/go.mod h1:scbssz8iZGpm3xbr14ovlUdkxfGXNInqkPWOWmG2CLw=
 github.com/cenkalti/backoff/v4 v4.1.2/go.mod h1:scbssz8iZGpm3xbr14ovlUdkxfGXNInqkPWOWmG2CLw=
 github.com/cenkalti/backoff/v4 v4.1.3/go.mod h1:scbssz8iZGpm3xbr14ovlUdkxfGXNInqkPWOWmG2CLw=
