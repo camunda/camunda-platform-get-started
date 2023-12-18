@@ -8,7 +8,7 @@ This guide explains how to setup a Spring Boot project to automate a process usi
 The open source library [spring-zeebe](https://github.com/camunda-community-hub/spring-zeebe)
 provides a Zeebe client.
 
-```
+```xml
 <dependency>
   <groupId>io.camunda</groupId>
   <artifactId>spring-zeebe-starter</artifactId>
@@ -106,7 +106,7 @@ a [job worker](https://docs.camunda.io/docs/product-manuals/concepts/job-workers
 to be subscribed the to task type defined in the process, i.e. `email`. For this
 the `@JobWorker` annotation can be used and the `type` has to be specified.
 
-```
+```java
 @JobWorker(type = "email")
 public void sendEmail(final ActivatedJob job) {
   final String message_content = (String) job.getVariablesAsMap().get("message_content");
@@ -129,7 +129,7 @@ instructions in [the guide](../README.md#complete-the-user-task).
 # Blocking vs. Non-Blocking Code
 
 The code example to start a process instance used 
-```
+```java
 send().join()
 ```
 which is a blocking call to wait for the issues command to be executed on the workflow engine. 
