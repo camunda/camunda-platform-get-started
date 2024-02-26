@@ -1,6 +1,6 @@
 # Get started with Camunda 8
 
-This repository gets user started with [Camunda 8](https://camunda.com/platform/) and contains instructions on how to:
+This repository gets users started with [Camunda 8](https://camunda.com/platform/) and contains instructions on how to:
 
 - Model your first process
 - Create a user task form
@@ -22,20 +22,22 @@ The repository contains the following folders:
 
 # Configure your environment
 
-To follow this guide, we need a running Camunda 8 cluster. For this purpose,
-we use the Camunda 8 SaaS offering at [https://camunda.io](https://camunda.io). If you prefer a local developer setup where you can run the getting started guide against a locally-hosted instance, follow the [Camunda 8 deployment guide](https://docs.camunda.io/docs/self-managed/platform-deployment/overview/).
+To follow this guide, you first need a running Camunda 8 cluster. For this purpose,
+use the Camunda 8 SaaS offering at [https://camunda.io](https://camunda.io).
 
-After the sign-up and log-in at https://camunda.io, [create a new cluster](https://docs.camunda.io/docs/guides/create-cluster/) with the latest stable version of Zeebe and the name **Test Cluster**.
+If you prefer a local developer setup where you can run the getting started guide against a locally-hosted instance, follow the [Camunda 8 deployment guide](https://docs.camunda.io/docs/self-managed/platform-deployment/overview/).
+
+To set up your environment using the SaaS offering, take the following steps:
+
+1. [Sign up and log in](https://docs.camunda.io/docs/next/guides/getting-started/) at [https://camunda.io](https://camunda.io).
+2. [Create a new cluster](https://docs.camunda.io/docs/guides/create-cluster/) with the latest stable version of Zeebe and the name **Test cluster**.
 
 ![Camunda Platform Cluster](images/cluster.png)
 
-After the cluster is available, we need to create [client
-credentials](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/).
-To do this, take the following steps:
-
-1. From Console, navigate to the **Clusters** detail page.
-2. Click on your cluster and switch to the **API** tab.
-3. Click **Create new client** and name your client accordingly.
+3. After the cluster is available, [create client credentials](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/). To do this:
+   1. From Console, navigate to the **Clusters** detail page.
+   2. Click on your cluster and switch to the **API** tab.
+   3. Click **Create new client** and name your client accordingly.
 
 **NOTE: Ensure you keep the generated client credentials in a safe place. The client secret will not be shown again. For your convenience, you can also download the client information to your computer.**
 
@@ -46,27 +48,25 @@ In this example, we'll model a process to send an email message.
 Camunda 8 allows you to use the
 [BPMN](https://docs.camunda.io/docs/components/modeler/bpmn/bpmn-primer/)
 standard to model your business processes. The process consists of two
-tasks: a user task to allow a human to enter the message content, and a service
-task to automatically send the email message.
+tasks: a [user task](https://docs.camunda.io/docs/next/guides/orchestrate-human-tasks/) to allow a human to enter the message content, and a [service
+task](https://docs.camunda.io/docs/next/guides/orchestrate-microservices/) to automatically send the email message.
 
 ![Process](images/send-email.png)
 
-**NOTE: To keep the scope of this guide limited, we only build the scaffolding for this process automation example and will not actually send an email. If you would like to send an email, you may extend the example and connect to a mail provider.**
+**NOTE: To keep the scope of this guide limited, this guide only steps through the framework for this process automation example and will not actually send an email. If you would like to send an email, you may extend the example and [connect to a mail provider](https://docs.camunda.io/docs/next/guides/configuring-out-of-the-box-connectors/).**
 
-To create the process, we use [Modeler](https://docs.camunda.io/docs/components/modeler/about-modeler/).
+To create the process, use [Modeler](https://docs.camunda.io/docs/components/modeler/about-modeler/).
 
-Find the finished process at [process/send-email.bpmn](process/send-email.bpmn).
+Find the finished process at [process/send-email.bpmn](process/send-email.bpmn), and learn more about [designing a process using BPMN](https://docs.camunda.io/docs/next/guides/automating-a-process-using-bpmn/).
 
-## Model the user task form
+## Model and configure the user task form
 
-To help users complete the user task **Enter Message**, we create a user
-task form using Modeler.
+To help users complete the user task **Enter message**, [create a user
+task form using Modeler](https://docs.camunda.io/docs/next/guides/utilizing-forms/).
 
-Find the finished form at [process/enter-email-message.form](process/enter-email-message.form).
+Find the finished form at [process/enter-email-message.form](process/enter-email-message.form)
 
-## Configure the user task to use the form
-
-Now, configure the user task to use the form.
+Configure the user task to use the form.
 To do this, copy the JSON content of the form into the **Form JSON configuration** field under the **Form** tab in the Modeler properties panel.
 
 ![Configure user task form](images/user-task-form.png)
@@ -76,9 +76,8 @@ To do this, copy the JSON content of the form into the **Form JSON configuration
 The last step is defining the job type of the service task.
 
 The job type is
-needed for a job worker to subscribe to the jobs of the task and
-complete them. See the [Camunda 8 documentation](https://docs.camunda.io) for more information about
-[job workers](https://docs.camunda.io/docs/components/concepts/job-workers/).
+needed for a [job worker](https://docs.camunda.io/docs/components/concepts/job-workers/) to subscribe to the jobs of the task and
+complete them.
 
 ![Configure service task](images/configure-service-task.png)
 
@@ -89,18 +88,17 @@ Modeler](#deploy-using-web-modeler), [Desktop Modeler](#deploy-using-desktop-mod
 
 ## Deploy using Web Modeler
 
-To deploy the [process](process/send-email.bpmn) using Web Modeler,
-follow [these steps](https://docs.camunda.io/docs/components/modeler/web-modeler/save-and-deploy/).
+To deploy the process using Web Modeler, click **Deploy** in the upper right corner of the modeling screen. See [deploy a process](https://docs.camunda.io/docs/components/modeler/web-modeler/run-or-publish-your-process/#deploy-a-process) for additional details.
 
 ## Deploy using Desktop Modeler
 
-To deploy the [process](process/send-email.bpmn) using Desktop Modeler,
-follow [these steps](https://docs.camunda.io/docs/components/modeler/desktop-modeler/connect-to-camunda-cloud/).
+To deploy the process using Desktop Modeler,
+[follow the steps in the Desktop Modeler documentation](https://docs.camunda.io/docs/components/modeler/desktop-modeler/connect-to-camunda-8/).
 
 ## Deploy using zbctl
 
-To the deploy the [process](process/send-email.bpmn) using `zbctl`, use the
-following command:
+To the deploy the process using `zbctl`, run the
+following command after inserting your cluster id and client credentials:
 
 ```bash
 zbctl deploy resource send-email.bpmn \
@@ -108,8 +106,6 @@ zbctl deploy resource send-email.bpmn \
   --clientId 'GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z' \
   --clientSecret '.RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ'
 ```
-
-For **Camunda 8**, we need the cluster id and the [client credentials](#setup-the-environment).
 
 ## Deploy using code
 
@@ -123,16 +119,15 @@ Start a new instance of the process using [Web Modeler](#start-instance-using-we
 
 ## Start instance using Web Modeler
 
-To start an instance of the process using Web Modeler, follow [these steps](https://docs.camunda.io/docs/components/modeler/web-modeler/start-instance/).
+To start an instance of the process using Web Modeler, click **Run** in the top right corner of the modeling screen. See [run or publish your process](https://docs.camunda.io/docs/components/modeler/web-modeler/run-or-publish-your-process/) for additional details.
 
 ## Start instance using Desktop Modeler
 
-After the process is deployed, click **Start Current Diagram** to start an instance of the process with Camunda Modeler.
+After the process is deployed, click **Start Current Diagram** to start an instance of the process with Desktop Modeler.
 
 ## Start instance using zbctl
 
-To start a process instance of the BPMN process id `send-email` using `zbctl`,
-use the following command:
+To start a process instance of the BPMN process id `send-email` using `zbctl`, insert your cluster id and client credentials, and run the following command:
 
 ```bash
 zbctl create instance send-email \
@@ -140,8 +135,6 @@ zbctl create instance send-email \
   --clientId 'GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z' \
   --clientSecret '.RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ'
 ```
-
-For **Camunda 8**, we need the cluster id and the [client credentials](#setup-the-environment).
 
 ## Start instance using code
 
@@ -152,32 +145,29 @@ visit the [programming language folders](#repository-structure).
 # Complete the user task
 
 The first task of the process is the [user task](https://docs.camunda.io/docs/components/modeler/bpmn/user-tasks/)
-**Enter Message**.
+**Enter message**.
 
 ![Process](images/send-email.png)
 
-To complete the user task, we use Tasklist. To do this, visit the cluster's
-details page in Camunda 8 and launch Tasklist.
+To complete the user task, take the following steps where we will use [Tasklist](https://docs.camunda.io/docs/components/tasklist/introduction-to-tasklist/):
 
-Take the following steps:
-
-1. In Tasklist, select the **Enter Message** task from the list of tasks.
-2. Click the **Claim** button to assign the task to you to work on it.
-3. Fill out the **E-Mail Content** field with the message you want to send.
-4. Select **Complete Task**.
+1. Navigate to Tasklist by clicking the square-shaped **Camunda components** icon in the top left corner. Click **Tasklist**.
+2. On the **Tasks** page, change the **Filter options** to **All open**.
+3. Select the **Enter message** task from the list of tasks, and click **Assign to me**.
+4. Fill out the **E-Mail Content** field with the message you want to send.
 
 ![Tasklist](images/tasklist.png)
 
+5. Select **Complete Task**. This will now show up under the **Filter option** that is **Completed**.
+
 # Complete the service task
 
-The second task of the process is the [service
-task](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/)
-**Send Email**.
+The second task of the process is the [service task](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/)
+**Send email**.
 
 ![Process](images/send-email.png)
 
-To complete the service task, we need to implement the business logic. Therefore, we must create a [job
-worker](https://docs.camunda.io/docs/components/concepts/job-workers/) for
+To complete the service task, we need to implement the business logic. Therefore, we must create a [job worker](https://docs.camunda.io/docs/components/concepts/job-workers/) for
 the task type we defined in the diagram. The job worker will subscribe to all
 jobs with the same task type.
 
@@ -185,11 +175,10 @@ To define the task type, we select the service task in the diagram and use
 the properties panel to set the task type to `email`.
 
 To implement the logic, we implement a job worker. Check out the
-programming language [specific folders](#repository-structure) to find the job
+[programming language folders](#repository-structure) to find the job
 worker implementations.
 
 # Further references
 
-Find more information in the [Camunda Platform 8 Documentation](https://docs.camunda.io), or join the [Camunda Platform 8
-Forum](https://forum.camunda.io) and [Camunda Platform 8
-Slack](https://camunda-cloud.slack.com) community.
+Find more information in the [Camunda 8 documentation](https://docs.camunda.io), or join the [Camunda 8
+Forum](https://forum.camunda.io).
