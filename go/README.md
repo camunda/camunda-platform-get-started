@@ -14,7 +14,7 @@ for Go.
 To install using Go modules, simply run:
 
 ```sh
-go get github.com/camunda/zeebe/clients/go/v8@v8.0.5
+go get github.com/camunda/zeebe/clients/go/v8@v8.2.7
 ```
 
 # Create Client
@@ -55,6 +55,8 @@ export ZEEBE_CLIENT_ID='[Client ID]'
 export ZEEBE_CLIENT_SECRET='[Client Secret]'
 export ZEEBE_AUTHORIZATION_SERVER_URL='[OAuth API]'
 ```
+
+When you create client credentials in Camunda Platform 8, you have the option to download a file with the lines above filled out for you.
 
 If you are using a self managed Camunda Platform 8 cluster, you create the default
 client and have to disable security.
