@@ -14,7 +14,7 @@ for Go.
 To install using Go modules, simply run:
 
 ```sh
-go get github.com/camunda/zeebe/clients/go/v8@v8.0.5
+go get github.com/camunda/zeebe/clients/go/v8@v8.4.5
 ```
 
 # Create Client
