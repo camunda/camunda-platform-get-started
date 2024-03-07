@@ -6,14 +6,14 @@ This guide explains how to setup a Java project to automate a process using
 # Install dependencies
 
 The open source library
-[zeebe-client-java](https://docs.camunda.io/docs/product-manuals/clients/java-client/index)
+[zeebe-client-java](https://docs.camunda.io/docs/next/apis-tools/java-client/)
 provides a Zeebe client.
 
 ```
 <dependency>
 	<groupId>io.camunda</groupId>
 	<artifactId>zeebe-client-java</artifactId>
-	<version>1.3.5</version>
+	<version>8.4.5</version>
 </dependency>
 ```
 
