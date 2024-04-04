@@ -12,7 +12,7 @@ provides a Zeebe client.
 <dependency>
   <groupId>io.camunda</groupId>
   <artifactId>spring-zeebe-starter</artifactId>
-  <version>8.4.5</version>
+  <version>8.5.0</version>
 </dependency>
 ```
 
