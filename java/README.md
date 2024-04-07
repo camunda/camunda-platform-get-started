@@ -84,7 +84,7 @@ To complete a [service
 task](https://docs.camunda.io/docs/reference/bpmn-workflows/service-tasks/service-tasks/),
 a [job
 worker](https://docs.camunda.io/docs/product-manuals/concepts/job-workers) has
-to be subscribed the to task type defined in the process, i.e. `email`. For this
+to be subscribed to the task type defined in the process, i.e. `email`. For this
 the `newWorker` method can be used.
 
 ```java
