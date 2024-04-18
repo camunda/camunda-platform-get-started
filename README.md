@@ -8,17 +8,19 @@ This repository gets users started with [Camunda 8](https://camunda.com/platform
 
 During this guide, you will use Console, Modeler, Zeebe, Operate, and Tasklist.
 
+To leverage your process data and analyze areas for improvement, [get started with Optimize](https://docs.camunda.io/docs/next/guides/improve-processes-with-optimize/).
+
 # Repository structure
 
 The repository contains the following folders:
 
-- [_csharp_](csharp/) - C# example for deploy, create instance, and a job worker.
-- [_go_](go/) - Go example for deploy, create instance, and a job worker.
+- [_csharp_](csharp/) - C# example to model, create, and automate your process.
+- [_go_](go/) - Go example to model, create, and automate your process.
 - [_images_](images/) - Contains screenshots and images for the guide.
-- [_java_](java/) - Plain Java example for deploy, create instance, and a job worker.
-- [_nodejs_](nodejs/) - Node.js example for deploy, create instance, and a job worker.
+- [_java_](java/) - Plain Java example to model, create, and automate your process.
+- [_nodejs_](nodejs/) - Node.js example to model, create, and automate your process.
 - [_process_](process/) - Contains the BPMN process and the user task form.
-- [_spring_](spring/) - Spring Boot example for deploy, create instance, and a job worker.
+- [_spring_](spring/) - Spring Boot example to model, create, and automate your process.
 
 # Configure your environment
 
@@ -66,8 +68,9 @@ task form using Modeler](https://docs.camunda.io/docs/next/guides/utilizing-form
 
 Find the finished form at [process/enter-email-message.form](process/enter-email-message.form)
 
-Configure the user task to use the form.
-To do this, copy the JSON content of the form into the **Form JSON configuration** field under the **Form** tab in the Modeler properties panel.
+If you already uploaded the aforementioned BPMN file, this contains the form and process model and requires no additional form configuration.
+
+If you did not previously upload the BPMN file, copy the JSON content of the form into the **Form JSON configuration** field under the **Form** tab in the Modeler properties panel.
 
 ![Configure user task form](images/user-task-form.png)
 
