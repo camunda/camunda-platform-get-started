@@ -4,7 +4,7 @@ go 1.21
 
 toolchain go1.21.8
 
-require github.com/camunda/zeebe/clients/go/v8 v8.5.0
+require github.com/camunda/camunda/clients/go/v8 v8.5.0
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 // indirect

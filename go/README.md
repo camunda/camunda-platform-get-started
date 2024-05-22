@@ -8,13 +8,13 @@ This guide explains how to set up a Go project to automate a process using
 The client requires you to install Go with a version greater than or equal to 1.17. See [here](https://go.dev/doc/install) on how to do this for your platform.
 
 The open source library
-[github.com/camunda/zeebe/clients/go/v8](https://docs.camunda.io/docs/apis-clients/go-client/) provides a Zeebe client 
+[github.com/camunda/camunda/clients/go/v8](https://docs.camunda.io/docs/apis-clients/go-client/) provides a Zeebe client 
 for Go.
 
 To install using Go modules, simply run:
 
 ```sh
-go get github.com/camunda/zeebe/clients/go/v8@v8.4.5
+go get github.com/camunda/camunda/clients/go/v8@v8.4.5
 ```
 
 # Create Client
@@ -26,9 +26,9 @@ a `clientId` and `clientSecret` from a [client credentials
 pair](https://docs.camunda.io/docs/components/modeler/bpmn/service-tasks/).
 
 The credentials can be specified by implementing your own 
-[zbc.CredentialsProvider](https://pkg.go.dev/github.com/camunda/zeebe/clients/go/pkg/zbc#CredentialsProvider) or
+[zbc.CredentialsProvider](https://pkg.go.dev/github.com/camunda/camunda/clients/go/pkg/zbc#CredentialsProvider) or
 using the existing 
-[OAuthCredentialsProvider](https://pkg.go.dev/github.com/camunda/zeebe/clients/go/pkg/zbc#OAuthCredentialsProvider)
+[OAuthCredentialsProvider](https://pkg.go.dev/github.com/camunda/camunda/clients/go/pkg/zbc#OAuthCredentialsProvider)
 which is compatible with Camunda Platform 8 SaaS clusters out of the box.
 
 ```golang
