@@ -6,6 +6,8 @@ github.com/camunda/zeebe/clients/go/v8 v8.5.1 h1:pqQYBFU/qjgwMsL2Dj1WkOez9JBDAKy
 github.com/camunda/zeebe/clients/go/v8 v8.5.1/go.mod h1:mx6wq3Z6Mfjda3yDe6Pl1G6BjX+VjkYYtWgoRQPgoFQ=
 github.com/camunda/zeebe/clients/go/v8 v8.5.2 h1:08OOgFzJnQoWAVONhD07U3em3wkWTXB/oFtzvKnHneE=
 github.com/camunda/zeebe/clients/go/v8 v8.5.2/go.mod h1:mx6wq3Z6Mfjda3yDe6Pl1G6BjX+VjkYYtWgoRQPgoFQ=
+github.com/camunda/zeebe/clients/go/v8 v8.5.3 h1:froVKeE0Mdgu8gii4BuRU1cZ+BzvMbDlo6qzQVghhZ4=
+github.com/camunda/zeebe/clients/go/v8 v8.5.3/go.mod h1:mx6wq3Z6Mfjda3yDe6Pl1G6BjX+VjkYYtWgoRQPgoFQ=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
