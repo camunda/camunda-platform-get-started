@@ -50,26 +50,6 @@ jobs:
         run: mvn --batch-mode --update-snapshots package
         working-directory: spring
 
-  go:
-    name: Go CI
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: 1.21
-      - name: Inject C8 client secrets
-        uses: ./.github/actions/inject-c8-client-secrets/
-        with:
-          client-id: ${{ secrets.CLIENT_ID }}
-          client-secret: ${{ secrets.CLIENT_SECRET }}
-          cluster-id: ${{ secrets.CLUSTER_ID }}
-      - name: Build
-        run: go build -o get-started -v ./...
-        working-directory: go
-
   nodejs:
     name: Node.js CI
     runs-on: ubuntu-latest
