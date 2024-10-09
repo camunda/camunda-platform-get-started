@@ -11,7 +11,7 @@
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <zeebe.version>8.5.6</zeebe.version>
+    <zeebe.version>8.6.0</zeebe.version>
     <log4j.version>2.19.0</log4j.version>
     <main.class>io.camunda.getstarted.DeployAndStartInstance</main.class>
   </properties>
