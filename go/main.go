@@ -19,15 +19,16 @@ import (
 	"embed"
 	"errors"
 	"fmt"
-	"github.com/camunda/zeebe/clients/go/v8/pkg/entities"
-	"github.com/camunda/zeebe/clients/go/v8/pkg/pb"
-	"github.com/camunda/zeebe/clients/go/v8/pkg/worker"
-	"github.com/camunda/zeebe/clients/go/v8/pkg/zbc"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/camunda-community-hub/zeebe-client-go/v8/pkg/entities"
+	"github.com/camunda-community-hub/zeebe-client-go/v8/pkg/pb"
+	"github.com/camunda-community-hub/zeebe-client-go/v8/pkg/worker"
+	"github.com/camunda-community-hub/zeebe-client-go/v8/pkg/zbc"
 )
 
 //go:embed resources
