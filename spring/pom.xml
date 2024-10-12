@@ -9,37 +9,23 @@
 	<artifactId>camunda-platform-get-started-spring</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-
 	<properties>
-		<java.version>11</java.version>
-		<spring-zeebe.version>8.1.17</spring-zeebe.version>
-		<zeebe.version>8.5.6</zeebe.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<zeebe.version>8.6.3</zeebe.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>io.camunda</groupId>
-			<artifactId>zeebe-client-java</artifactId>
+			<artifactId>spring-boot-starter-camunda-sdk</artifactId>
 			<version>${zeebe.version}</version>
 		</dependency>
-
 		<dependency>
-			<groupId>io.camunda</groupId>
-			<artifactId>spring-zeebe-starter</artifactId>
-			<version>${spring-zeebe.version}</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>2.0.16</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -47,6 +33,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.3.4</version>
 			</plugin>
 		</plugins>
 	</build>

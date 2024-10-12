@@ -8,13 +8,13 @@ This guide explains how to set up a Go project to automate a process using
 The client requires you to install Go with a version greater than or equal to 1.17. See [here](https://go.dev/doc/install) on how to do this for your platform.
 
 The open source library
-[github.com/camunda/zeebe/clients/go/v8](https://docs.camunda.io/docs/apis-clients/go-client/) provides a Zeebe client 
+[github.com/camunda-community-hub/zeebe-client-go](https://docs.camunda.io/docs/apis-clients/go-client/) provides a Zeebe client 
 for Go.
 
 To install using Go modules, simply run:
 
 ```sh
-go get github.com/camunda/zeebe/clients/go/v8@v8.4.5
+go get github.com/camunda-community-hub/zeebe-client-go/v8@v8.6.0
 ```
 
 # Create Client
