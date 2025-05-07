@@ -13,7 +13,7 @@ provides a Zeebe client.
 <dependency>
 	<groupId>io.camunda</groupId>
 	<artifactId>zeebe-client-java</artifactId>
-	<version>8.7.1</version>
+	<version>8.7.2</version>
 </dependency>
 ```
 
@@ -23,7 +23,7 @@ If we want to connect to a Camunda Platform 8 SaaS cluster we need the `clusterI
 from the [Clusters details
 page](https://docs.camunda.io/docs/components/console/manage-clusters/create-cluster/),
 a `clientId` and `clientSecret` from a [client credentials
-pair](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/). 
+pair](https://docs.camunda.io/docs/components/console/manage-clusters/manage-api-clients/).
 
 The credentails can be specified in the client builder.
 
@@ -100,7 +100,7 @@ client.newWorker().jobType("email").handler((jobClient, job) -> {
                 } else {
                   LOG.error("Failed to complete job", exception);
                 }
-          });            
+          });
 }).open();
 ```
 
@@ -121,12 +121,12 @@ Some of the code examples above (deploy, start process instance) used
 ```
 send().join()
 ```
-which is a blocking call to wait for the issues command to be executed on the workflow engine. While this is very straightforward to use and produces easy-to-read code, blocking code is limited in terms of scalability. 
+which is a blocking call to wait for the issues command to be executed on the workflow engine. While this is very straightforward to use and produces easy-to-read code, blocking code is limited in terms of scalability.
 
 That's why the worker showed a different pattern:
 ```
 send().whenComplete((result, exception) -> {})
 ```
-This registers a callback to be executed if the command on the workflow engine was executed or resulted in an exception. This allows for parallelism, which is especially interesting in workers. 
+This registers a callback to be executed if the command on the workflow engine was executed or resulted in an exception. This allows for parallelism, which is especially interesting in workers.
 
 This is discussed in more detail in [this blog post about writing good workers for Camunda Platform 8](https://blog.bernd-ruecker.com/writing-good-workers-for-camunda-cloud-61d322cad862).
