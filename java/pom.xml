@@ -9,8 +9,8 @@
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
     <zeebe.version>8.7.7</zeebe.version>
     <log4j.version>2.19.0</log4j.version>
     <main.class>io.camunda.getstarted.DeployAndStartInstance</main.class>
@@ -21,6 +21,22 @@
       <groupId>io.camunda</groupId>
       <artifactId>zeebe-client-java</artifactId>
       <version>${zeebe.version}</version>
+      <exclusions>
+        <!-- excluding the java 8 incompatible transitive model lib -->
+        <!-- until https://github.com/camunda/camunda/issues/28277 is resolved -->
+        <exclusion>
+          <groupId>org.camunda.bpm.model</groupId>
+          <artifactId>camunda-xml-model</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- including explicit dep on javba 8 compatible model lib -->
+    <!-- until https://github.com/camunda/camunda/issues/28277 is resolved -->
+    <dependency>
+      <groupId>org.camunda.bpm.model</groupId>
+      <artifactId>camunda-xml-model</artifactId>
+      <version>7.19.0</version>
     </dependency>
 
     <dependency>
