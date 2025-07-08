@@ -2,9 +2,13 @@ package io.camunda.getstarted;
 
 import io.camunda.zeebe.client.ZeebeClient;
 import io.camunda.zeebe.client.api.response.ProcessInstanceEvent;
+
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.camunda.bpm.model.xml.Model;
+import org.camunda.bpm.model.xml.impl.ModelImpl;
 
 public class DeployAndStartInstance {
 
@@ -17,17 +21,20 @@ public class DeployAndStartInstance {
           .send()
           .join();
 
+
+      Map<String, Object> variables = new HashMap<>();
+      variables.put("message_content", "Hello from the Java get started");
       final ProcessInstanceEvent event = client.newCreateInstanceCommand()
           .bpmnProcessId("send-email")
           .latestVersion()
-          .variables(Map.of("message_content", "Hello from the Java get started"))
+          .variables(variables)
           .send()
           .join();
 
-      LOG.info(
-          "Started instance for processDefinitionKey='{}', bpmnProcessId='{}', version='{}' with processInstanceKey='{}'",
-          event.getProcessDefinitionKey(), event.getBpmnProcessId(), event.getVersion(),
-          event.getProcessInstanceKey());
+      // just here to provoke a compile error if using jdk 8 but byte code incompatible model lib
+      Model model = new ModelImpl("");
+
+      LOG.info("Started instance");
     }
   }
 }
