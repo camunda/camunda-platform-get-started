@@ -13,7 +13,7 @@ provides a Zeebe client.
 <dependency>
 	<groupId>io.camunda</groupId>
 	<artifactId>zeebe-client-java</artifactId>
-	<version>8.7.8</version>
+	<version>8.7.9</version>
 </dependency>
 ```
 
