@@ -5,7 +5,7 @@ This guide explains how to setup a Spring Boot project to automate a process usi
 
 # Install dependencies
 
-The [official Spring Zeebe SDK](https://docs.camunda.io/docs/next/apis-tools/spring-zeebe-sdk/getting-started/)
+The [official Spring Zeebe SDK](https://docs.camunda.io/docs/apis-tools/spring-zeebe-sdk/getting-started/)
 provides a Zeebe client.
 
 ```
