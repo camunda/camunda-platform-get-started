@@ -47,8 +47,7 @@ To set up your environment using the SaaS offering, take the following steps:
 
 In this example, we'll model a process to send an email message.
 
-Camunda 8 allows you to use the [BPMN](https://docs.camunda.io/docs/components/modeler/bpmn/bpmn-primer/) standard to model your business processes. The process consists of two
-tasks: a [user task](https://docs.camunda.io/docs/next/guides/orchestrate-human-tasks/) to allow a human to enter the message content, and a [service task](https://docs.camunda.io/docs/8.6/guides/orchestrate-microservices/) to automatically send the email message.
+Camunda 8 allows you to use the [BPMN](https://docs.camunda.io/docs/components/modeler/bpmn/bpmn-primer/) standard to model your business processes. The process consists of two tasks: a [user task](https://docs.camunda.io/docs/next/guides/orchestrate-human-tasks/) that allows a human to enter the message content, and a service task to automatically send the email message.
 
 ![Process](images/send-email.png)
 
