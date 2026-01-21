@@ -8,7 +8,7 @@ This repository gets users started with [Camunda 8](https://camunda.com/platform
 
 During this guide, you will use Console, Modeler, Zeebe, Operate, and Tasklist.
 
-To leverage your process data and analyze areas for improvement, [get started with Optimize](https://docs.camunda.io/docs/next/guides/improve-processes-with-optimize/).
+To leverage your process data and analyze areas for improvement, [get started with Optimize](https://docs.camunda.io/docs/next/components/optimize/improve-processes-with-optimize/).
 
 # Repository structure
 
@@ -27,12 +27,12 @@ The repository contains the following folders:
 To follow this guide, you first need a running Camunda 8 cluster. For this purpose,
 use the Camunda 8 SaaS offering at [https://camunda.io](https://camunda.io).
 
-If you prefer a local developer setup where you can run the getting started guide against a locally-hosted instance, follow the [Camunda 8 deployment guide](https://docs.camunda.io/docs/self-managed/platform-deployment/overview/).
+If you prefer a local developer setup where you can run the getting started guide against a locally-hosted instance, follow the [Camunda 8 deployment guide](https://docs.camunda.io/docs/next/self-managed/deployment/).
 
 To set up your environment using the SaaS offering, take the following steps:
 
-1. [Sign up and log in](https://docs.camunda.io/docs/next/guides/getting-started/) at [https://camunda.io](https://camunda.io).
-2. [Create a new cluster](https://docs.camunda.io/docs/guides/create-cluster/) with the latest stable version of Zeebe and the name **Test cluster**.
+1. [Sign up and log in](https://docs.camunda.io/docs/components/saas/) at [https://camunda.io](https://camunda.io).
+2. [Create a new cluster](https://docs.camunda.io/docs/components/console/manage-clusters/create-cluster/) with the latest stable version of Zeebe and the name **Test cluster**.
 
 ![Camunda Platform Cluster](images/cluster.png)
 
@@ -47,24 +47,21 @@ To set up your environment using the SaaS offering, take the following steps:
 
 In this example, we'll model a process to send an email message.
 
-Camunda 8 allows you to use the
-[BPMN](https://docs.camunda.io/docs/components/modeler/bpmn/bpmn-primer/)
-standard to model your business processes. The process consists of two
-tasks: a [user task](https://docs.camunda.io/docs/next/guides/orchestrate-human-tasks/) to allow a human to enter the message content, and a [service
-task](https://docs.camunda.io/docs/next/guides/orchestrate-microservices/) to automatically send the email message.
+Camunda 8 allows you to use the [BPMN](https://docs.camunda.io/docs/components/modeler/bpmn/bpmn-primer/) standard to model your business processes. The process consists of two
+tasks: a [user task](https://docs.camunda.io/docs/next/guides/orchestrate-human-tasks/) to allow a human to enter the message content, and a [service task](https://docs.camunda.io/docs/8.6/guides/orchestrate-microservices/) to automatically send the email message.
 
 ![Process](images/send-email.png)
 
-**NOTE: To keep the scope of this guide limited, this guide only steps through the framework for this process automation example and will not actually send an email. If you would like to send an email, you may extend the example and [connect to a mail provider](https://docs.camunda.io/docs/next/guides/configuring-out-of-the-box-connectors/).**
+**NOTE: To keep the scope of this guide limited, this guide only steps through the framework for this process automation example and will not actually send an email. If you would like to send an email, you may extend the example and [connect to a mail provider](https://docs.camunda.io/docs/components/connectors/use-connectors/configuring-out-of-the-box-connectors/).**
 
 To create the process, use [Modeler](https://docs.camunda.io/docs/components/modeler/about-modeler/).
 
-Find the finished process at [process/send-email.bpmn](process/send-email.bpmn), and learn more about [designing a process using BPMN](https://docs.camunda.io/docs/next/guides/automating-a-process-using-bpmn/).
+Find the finished process at [process/send-email.bpmn](process/send-email.bpmn), and learn more about [designing a process using BPMN](https://docs.camunda.io/docs/components/modeler/bpmn/automating-a-process-using-bpmn/).
 
 ## Model and configure the user task form
 
 To help users complete the user task **Enter message**, [create a user
-task form using Modeler](https://docs.camunda.io/docs/next/guides/utilizing-forms/).
+task form using Modeler](https://docs.camunda.io/docs/components/modeler/forms/utilizing-forms/).
 
 Find the finished form at [process/enter-email-message.form](process/enter-email-message.form)
 
